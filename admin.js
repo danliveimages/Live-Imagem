@@ -44,22 +44,46 @@ const historyBtn =
   document.getElementById("historyBtn");
 
 /* =========================
+   ABA INICIAL
+========================= */
+
+list.classList.add("activeSection");
+
+queueBtn.classList.add("activeTab");
+
+/* =========================
    TROCA DE TELAS
 ========================= */
 
 queueBtn.addEventListener("click", () => {
 
+  /* TELAS */
+
   list.classList.add("activeSection");
 
   historyList.classList.remove("activeSection");
+
+  /* BOTÕES */
+
+  queueBtn.classList.add("activeTab");
+
+  historyBtn.classList.remove("activeTab");
 
 });
 
 historyBtn.addEventListener("click", () => {
 
+  /* TELAS */
+
   historyList.classList.add("activeSection");
 
   list.classList.remove("activeSection");
+
+  /* BOTÕES */
+
+  historyBtn.classList.add("activeTab");
+
+  queueBtn.classList.remove("activeTab");
 
 });
 
