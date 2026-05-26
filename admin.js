@@ -182,7 +182,7 @@ onSnapshot(q, (snapshot) => {
 
     else {
 
-      historyList.appendChild(card);
+      historyList.prepend(card);
 
     }
 
