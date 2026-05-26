@@ -98,6 +98,10 @@ body{
   letter-spacing:-1px;
 }
 
+/* =========================
+   LIVE IMAGES
+========================= */
+
 .liveImages{
 
   margin-top:8px;
@@ -106,24 +110,29 @@ body{
 
   font-weight:800;
 
+  letter-spacing:-1px;
+
   background:linear-gradient(
     90deg,
     #22c55e,
     #3b82f6,
+    #a855f7,
     #ef4444,
     #facc15,
-    #22c55e
+    #22c55e,
+    #3b82f6,
+    #a855f7
   );
 
-  background-size:300% 300%;
+  background-size:800% auto;
+
+  background-position:0% center;
 
   -webkit-background-clip:text;
 
   -webkit-text-fill-color:transparent;
 
-  animation:rainbowMove 5s linear infinite;
-
-  letter-spacing:-1px;
+  animation:smoothRainbow 18s linear infinite;
 }
 
 .logoLine{
@@ -139,26 +148,28 @@ body{
     90deg,
     #22c55e,
     #3b82f6,
+    #a855f7,
     #ef4444,
-    #facc15
+    #facc15,
+    #22c55e
   );
 
-  background-size:300% 300%;
+  background-size:800% auto;
 
-  animation:rainbowMove 5s linear infinite;
+  animation:smoothRainbow 18s linear infinite;
 
   box-shadow:
     0 0 24px rgba(59,130,246,.35);
 }
 
-@keyframes rainbowMove{
+@keyframes smoothRainbow{
 
   0%{
-    background-position:0% 50%;
+    background-position:0% center;
   }
 
   100%{
-    background-position:200% 50%;
+    background-position:800% center;
   }
 }
 
@@ -212,7 +223,9 @@ body{
     scale(1.02);
 }
 
-/* FILA */
+/* =========================
+   FILA
+========================= */
 
 .queueBtn{
 
@@ -230,7 +243,9 @@ body{
     0 0 30px rgba(34,197,94,.18);
 }
 
-/* HISTÓRICO */
+/* =========================
+   HISTÓRICO
+========================= */
 
 .historyBtn{
 
@@ -319,7 +334,9 @@ body{
     translateY(-4px);
 }
 
-/* FOTO */
+/* =========================
+   FOTO
+========================= */
 
 .card img{
 
@@ -333,12 +350,27 @@ body{
 
   display:block;
 
-  background:black;
-
   padding:14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.04),
+      rgba(255,255,255,.02)
+    );
+
+  backdrop-filter:blur(18px);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.04);
+
+  box-shadow:
+    inset 0 0 40px rgba(59,130,246,.08);
 }
 
-/* CONTEÚDO */
+/* =========================
+   CONTEÚDO
+========================= */
 
 .cardContent{
 
@@ -387,7 +419,9 @@ body{
   white-space:pre-wrap;
 }
 
-/* AÇÕES */
+/* =========================
+   AÇÕES
+========================= */
 
 .actions{
 
@@ -422,7 +456,9 @@ body{
   transform:scale(1.03);
 }
 
-/* APROVAR */
+/* =========================
+   APROVAR
+========================= */
 
 .actions button:first-child{
 
@@ -437,7 +473,9 @@ body{
     0 0 25px rgba(34,197,94,.25);
 }
 
-/* RECUSAR */
+/* =========================
+   RECUSAR
+========================= */
 
 .rejectBtn{
 
@@ -452,7 +490,9 @@ body{
     0 0 25px rgba(239,68,68,.22);
 }
 
-/* SCROLL */
+/* =========================
+   SCROLL
+========================= */
 
 .mainContent::-webkit-scrollbar{
 
