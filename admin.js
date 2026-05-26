@@ -43,27 +43,23 @@ const queueBtn =
 const historyBtn =
   document.getElementById("historyBtn");
 
-console.log("LIST:", list);
-
-console.log("HISTORY:", historyList);
-
 /* =========================
-   SIDEBAR
+   TROCA DE TELAS
 ========================= */
 
 queueBtn.addEventListener("click", () => {
 
-  list.style.display = "grid";
+  list.classList.add("activeSection");
 
-  historyList.style.display = "none";
+  historyList.classList.remove("activeSection");
 
 });
 
 historyBtn.addEventListener("click", () => {
 
-  list.style.display = "none";
+  historyList.classList.add("activeSection");
 
-  historyList.style.display = "grid";
+  list.classList.remove("activeSection");
 
 });
 
@@ -85,8 +81,6 @@ const q = query(
 
 onSnapshot(q, (snapshot) => {
 
-  console.log("Dados recebidos");
-
   list.innerHTML = "";
 
   historyList.innerHTML = "";
@@ -94,8 +88,6 @@ onSnapshot(q, (snapshot) => {
   snapshot.forEach((docSnap) => {
 
     const data = docSnap.data();
-
-    console.log(data);
 
     /* =========================
        DATA SEGURA
@@ -138,7 +130,9 @@ onSnapshot(q, (snapshot) => {
 
         <div class="cardTop">
 
-          <h3>${data.nickname || "Sem nickname"}</h3>
+          <h3>
+            ${data.nickname || "Sem nickname"}
+          </h3>
 
           <span class="date">
             ${formattedDate}
@@ -209,10 +203,10 @@ window.approve = async function(id){
       doc(db, "submissions", id),
 
       {
-  approved: true,
-  rejected: false,
-  shown: false
-}
+        approved: true,
+        rejected: false,
+        shown: false
+      }
 
     );
 

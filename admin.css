@@ -114,25 +114,24 @@ body{
 
   background:linear-gradient(
     90deg,
-    #22c55e,
-    #3b82f6,
-    #a855f7,
-    #ef4444,
-    #facc15,
-    #22c55e,
-    #3b82f6,
-    #a855f7
+    #22c55e 0%,
+    #3b82f6 12%,
+    #a855f7 24%,
+    #ef4444 36%,
+    #facc15 48%,
+    #22c55e 60%,
+    #3b82f6 72%,
+    #a855f7 84%,
+    #ef4444 100%
   );
 
-  background-size:800% auto;
-
-  background-position:0% center;
+  background-size:400% 100%;
 
   -webkit-background-clip:text;
 
   -webkit-text-fill-color:transparent;
 
-  animation:smoothRainbow 18s linear infinite;
+  animation:smoothRainbow 14s linear infinite;
 }
 
 .logoLine{
@@ -154,9 +153,9 @@ body{
     #22c55e
   );
 
-  background-size:800% auto;
+  background-size:400% 100%;
 
-  animation:smoothRainbow 18s linear infinite;
+  animation:smoothRainbow 14s linear infinite;
 
   box-shadow:
     0 0 24px rgba(59,130,246,.35);
@@ -165,11 +164,11 @@ body{
 @keyframes smoothRainbow{
 
   0%{
-    background-position:0% center;
+    background-position:0% 50%;
   }
 
   100%{
-    background-position:800% center;
+    background-position:400% 50%;
   }
 }
 
@@ -285,6 +284,54 @@ body{
       rgba(59,130,246,.08),
       transparent 40%
     );
+
+  position:relative;
+}
+
+/* =========================
+   TRANSIÇÃO
+========================= */
+
+.contentSection{
+
+  position:absolute;
+
+  top:34px;
+  left:34px;
+  right:34px;
+
+  opacity:0;
+
+  transform:
+    translateY(20px)
+    scale(.98);
+
+  filter:blur(10px);
+
+  pointer-events:none;
+
+  visibility:hidden;
+
+  transition:
+    opacity .45s ease,
+    transform .45s ease,
+    filter .45s ease,
+    visibility .45s;
+}
+
+.contentSection.activeSection{
+
+  opacity:1;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  filter:blur(0);
+
+  pointer-events:auto;
+
+  visibility:visible;
 }
 
 /* =========================
@@ -355,7 +402,7 @@ body{
   background:
     linear-gradient(
       135deg,
-      rgba(255,255,255,.04),
+      rgba(255,255,255,.05),
       rgba(255,255,255,.02)
     );
 

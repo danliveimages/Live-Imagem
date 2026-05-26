@@ -18,7 +18,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="admin.css?v=5">
+  <link rel="stylesheet" href="admin.css?v=8">
 
 </head>
 
@@ -57,6 +57,7 @@ if(!senha || senha.trim() !== "222600"){
   <!-- SIDEBAR -->
   <div class="sidebar">
 
+    <!-- LOGO -->
     <div class="logo">
 
       <div class="adminTitle">
@@ -71,6 +72,7 @@ if(!senha || senha.trim() !== "222600"){
 
     </div>
 
+    <!-- BOTÃO FILA -->
     <button
       id="queueBtn"
       class="sidebarBtn queueBtn"
@@ -78,6 +80,7 @@ if(!senha || senha.trim() !== "222600"){
       FILA
     </button>
 
+    <!-- BOTÃO HISTÓRICO -->
     <button
       id="historyBtn"
       class="sidebarBtn historyBtn"
@@ -87,16 +90,19 @@ if(!senha || senha.trim() !== "222600"){
 
   </div>
 
-  <!-- CONTEÚDO -->
+  <!-- MAIN -->
   <div class="mainContent">
 
     <!-- FILA -->
-    <div id="list"></div>
+    <div
+      id="list"
+      class="contentSection activeSection"
+    ></div>
 
     <!-- HISTÓRICO -->
     <div
       id="historyList"
-      style="display:none;"
+      class="contentSection"
     ></div>
 
   </div>
