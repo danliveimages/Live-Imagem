@@ -310,16 +310,18 @@ body {
 
   letter-spacing: -1px;
 
-  line-height: 1.1;
+  line-height: 1.15;
 
   overflow: visible;
+
+  padding-bottom: 6px;
 }
 
 .animatedTitle {
 
   display: inline-block;
 
-  padding-bottom: 6px;
+  padding-bottom: 10px;
 
   background: linear-gradient(
     90deg,
@@ -686,18 +688,24 @@ button:hover {
 
     font-size:clamp(24px, 7vw, 38px);
 
-    margin-bottom:26px;
+    margin-bottom:22px;
 
-    line-height:1.08;
+    line-height:1.2;
 
     white-space:nowrap;
 
     overflow:visible;
+
+    padding-bottom:10px;
   }
 
   .animatedTitle{
 
-    padding-bottom:10px;
+    display:inline-block;
+
+    padding-bottom:14px;
+
+    transform:translateY(2px);
   }
 
   .page{
@@ -709,4 +717,4 @@ button:hover {
     width:calc(100% - 52px);
   }
 
-} 
+}
