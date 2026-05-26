@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Painel Admin</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="admin.css?v=999">
+
+</head>
+
+<body>
+
+<script>
+
+const senha = prompt("Digite a senha admin");
+
+if(!senha || senha.trim() !== "222600"){
+
+  document.body.innerHTML = `
+    <div style="
+      width:100vw;
+      height:100vh;
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:Poppins;
+      color:white;
+      font-size:32px;
+      font-weight:700;
+    ">
+      Acesso negado
+    </div>
+  `;
+
+  throw new Error("Sem acesso");
+}
+
+</script>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+
+  <div class="logo">
+
+    <div class="adminTitle">
+      Painel Admin -
+    </div>
+
+    <div class="liveImages">
+      Live Images
+    </div>
+
+    <div class="logoLine"></div>
+
+  </div>
+
+  <button
+    id="queueBtn"
+    class="sidebarBtn queueBtn"
+  >
+    FILA
+  </button>
+
+  <button
+    id="historyBtn"
+    class="sidebarBtn historyBtn"
+  >
+    HISTÓRICO
+  </button>
+
+</div>
+
+<!-- CONTEÚDO -->
+<div class="mainContent">
+
+  <div id="list"></div>
+
+  <div
+    id="historyList"
+    style="display:none;"
+  ></div>
+
+</div>
+
+<script
+  type="module"
+  src="admin.js"
+></script>
+
+</body>
+
+</html>

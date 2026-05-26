@@ -1,0 +1,487 @@
+body{
+  background:red !important;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  background:
+    linear-gradient(
+      135deg,
+      #050816,
+      #081122,
+      #050816
+    );
+
+  min-height:100vh;
+
+  overflow:hidden;
+
+  font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   APP
+========================= */
+
+.adminApp{
+
+  width:100vw;
+  height:100vh;
+
+  display:flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+  width:340px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,18,35,.98),
+      rgba(7,11,22,.98)
+    );
+
+  border-right:
+    1px solid rgba(255,255,255,.06);
+
+  padding:42px 30px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+    0 0 50px rgba(0,0,0,.45);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+  width:100%;
+
+  text-align:center;
+
+  margin-bottom:60px;
+}
+
+.adminTitle{
+
+  color:white;
+
+  font-size:54px;
+
+  font-weight:800;
+
+  line-height:1.1;
+
+  font-family:'Poppins',sans-serif;
+
+  letter-spacing:-1px;
+}
+
+.liveImages{
+
+  margin-top:8px;
+
+  font-size:58px;
+
+  font-weight:800;
+
+  font-family:'Poppins',sans-serif;
+
+  background:linear-gradient(
+    90deg,
+    #22c55e,
+    #3b82f6,
+    #ef4444,
+    #facc15,
+    #22c55e
+  );
+
+  background-size:300% 300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:rainbowMove 5s linear infinite;
+
+  letter-spacing:-1px;
+}
+
+.logoLine{
+
+  width:190px;
+  height:4px;
+
+  border-radius:999px;
+
+  margin:24px auto 0 auto;
+
+  background:linear-gradient(
+    90deg,
+    #22c55e,
+    #3b82f6,
+    #ef4444,
+    #facc15
+  );
+
+  background-size:300% 300%;
+
+  animation:rainbowMove 5s linear infinite;
+
+  box-shadow:
+    0 0 24px rgba(59,130,246,.35);
+}
+
+@keyframes rainbowMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:200% 50%;
+  }
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.sidebarBtn{
+
+  width:100%;
+
+  height:110px;
+
+  border:none;
+
+  border-radius:30px;
+
+  margin-bottom:26px;
+
+  cursor:pointer;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:.25s ease;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#111827;
+
+  color:white;
+
+  box-shadow:
+    0 14px 35px rgba(0,0,0,.35);
+
+  border:
+    2px solid rgba(255,255,255,.08);
+}
+
+.sidebarBtn:hover{
+
+  transform:
+    translateY(-4px)
+    scale(1.02);
+}
+
+.btnText{
+
+  font-size:36px;
+
+  font-weight:800;
+
+  letter-spacing:.5px;
+
+  font-family:'Poppins',sans-serif;
+}
+
+/* =========================
+   FILA
+========================= */
+
+.queueBtn{
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,197,94,.22),
+      rgba(34,197,94,.04)
+    );
+
+  border:
+    2px solid rgba(34,197,94,.95);
+
+  box-shadow:
+    0 0 35px rgba(34,197,94,.25);
+}
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+.historyBtn{
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,.22),
+      rgba(59,130,246,.04)
+    );
+
+  border:
+    2px solid rgba(59,130,246,.95);
+
+  box-shadow:
+    0 0 35px rgba(59,130,246,.25);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.mainContent{
+
+  flex:1;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  padding:34px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(59,130,246,.08),
+      transparent 40%
+    );
+}
+
+/* =========================
+   GRID
+========================= */
+
+#list,
+#historyList{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(auto-fill,minmax(380px,1fr));
+
+  gap:28px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,19,35,.98),
+      rgba(9,14,28,.98)
+    );
+
+  border-radius:30px;
+
+  overflow:hidden;
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+  transition:.25s ease;
+}
+
+.card:hover{
+
+  transform:
+    translateY(-4px);
+}
+
+/* =========================
+   FOTO
+========================= */
+
+.card img{
+
+  width:100%;
+
+  height:auto;
+
+  max-height:520px;
+
+  object-fit:contain;
+
+  display:block;
+
+  background:black;
+
+  padding:14px;
+}
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.cardContent{
+
+  padding:24px;
+}
+
+.cardTop{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-bottom:18px;
+}
+
+.card h3{
+
+  color:white;
+
+  font-size:30px;
+
+  font-weight:700;
+}
+
+.date{
+
+  color:#9ca3af;
+
+  font-size:15px;
+}
+
+.card p{
+
+  color:#d1d5db;
+
+  font-size:19px;
+
+  line-height:1.5;
+
+  margin-bottom:24px;
+
+  white-space:pre-wrap;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.actions{
+
+  display:flex;
+
+  gap:16px;
+}
+
+.actions button{
+
+  flex:1;
+
+  height:64px;
+
+  border:none;
+
+  border-radius:20px;
+
+  cursor:pointer;
+
+  font-size:23px;
+
+  font-weight:700;
+
+  color:white;
+
+  transition:.2s ease;
+}
+
+.actions button:hover{
+
+  transform:scale(1.03);
+}
+
+/* APROVAR */
+
+.actions button:first-child{
+
+  background:
+    linear-gradient(
+      135deg,
+      #16a34a,
+      #22c55e
+    );
+
+  box-shadow:
+    0 0 25px rgba(34,197,94,.25);
+}
+
+/* RECUSAR */
+
+.rejectBtn{
+
+  background:
+    linear-gradient(
+      135deg,
+      #dc2626,
+      #ef4444
+    );
+
+  box-shadow:
+    0 0 25px rgba(239,68,68,.22);
+}
+
+/* =========================
+   SCROLL
+========================= */
+
+.mainContent::-webkit-scrollbar{
+
+  width:10px;
+}
+
+.mainContent::-webkit-scrollbar-thumb{
+
+  background:#1f2937;
+
+  border-radius:999px;
+}

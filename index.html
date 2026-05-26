@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Pix - Live Imagem</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- FIGURINHAS -->
+  <div class="floatingWrapper">
+
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+
+  </div>
+
+  <!-- CONTAINER -->
+  <div class="container">
+
+    <!-- PROGRESSO -->
+    <div class="progressWrapper">
+
+      <div class="progressSteps">
+
+        <div class="progressStep active"></div>
+
+        <div class="progressLine"></div>
+
+        <div
+          class="progressStep"
+          id="step2Ball"
+        ></div>
+
+      </div>
+
+    </div>
+
+    <!-- TÍTULO -->
+    <h1 class="title">
+
+      <span class="animatedTitle">
+        Pix
+      </span>
+
+      <span class="animatedTitle">
+        -
+      </span>
+
+      <span class="animatedTitle">
+        Live Imagem
+      </span>
+
+    </h1>
+
+    <!-- =========================
+         ETAPA 1
+    ========================== -->
+
+    <div
+      class="page activePage"
+      id="page1"
+    >
+
+      <!-- NICKNAME -->
+      <input
+        type="text"
+        id="nickname"
+        placeholder="Seu nickname"
+      >
+
+      <!-- MENSAGEM -->
+      <textarea
+        id="message"
+        placeholder="Mensagem"
+      ></textarea>
+
+      <!-- UPLOAD -->
+      <label
+        class="uploadLabel"
+        for="image"
+      >
+        📷 Escolher imagem
+      </label>
+
+      <input
+        type="file"
+        id="image"
+        accept="image/*"
+      >
+
+      <!-- ALERTA -->
+      <div class="paymentAlert">
+
+        <p>
+
+          Sua imagem aparecerá na live após a confirmação do pagamento Pix
+
+<br><br>
+
+Clique em continuar para efetuar o pagamento.
+
+          <br><br>
+
+          Valor mínimo: R$1,00
+
+        </p>
+
+      </div>
+
+      <!-- CONTINUAR -->
+      <button id="continueBtn">
+        CONTINUAR
+      </button>
+
+    </div>
+
+    <!-- =========================
+         ETAPA 2
+    ========================== -->
+
+    <div
+      class="page"
+      id="page2"
+    >
+
+      <!-- QR -->
+      <img
+        src="danqrcode.png"
+        class="pixImage"
+      >
+
+      <!-- DIVISOR -->
+      <div class="divider">
+
+        <div></div>
+
+        <span>ou</span>
+
+        <div></div>
+
+      </div>
+
+      <!-- TEXTO -->
+      <p class="pixText">
+        Copie a chave Pix:
+      </p>
+
+      <!-- CHAVE -->
+      <div class="pixKey">
+        d5d7dc22-155f-45ee-8e1f-cdc8433bd8b3
+      </div>
+
+      <!-- COPIAR -->
+      <button id="copyBtn">
+        COPIAR CHAVE PIX
+      </button>
+
+      <!-- CONFIRMAR -->
+      <button id="sendBtn">
+        CONFIRMAR PAGAMENTO
+      </button>
+
+      <!-- STATUS -->
+      <p id="status"></p>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <div class="footer">
+
+      <p>
+        Live Imagem
+      </p>
+
+      <div class="footerLine"></div>
+
+      <p>
+        by Daniel Lima
+      </p>
+
+    </div>
+
+  </div>
+
+  <script
+    type="module"
+    src="app.js"
+  ></script>
+
+</body>
+
+</html>
