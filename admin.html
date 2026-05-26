@@ -12,12 +12,13 @@
 
   <title>Painel Admin</title>
 
+  <!-- Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="admin.css?v=999">
+  <link rel="stylesheet" href="admin.css?v=5">
 
 </head>
 
@@ -51,48 +52,54 @@ if(!senha || senha.trim() !== "222600"){
 
 </script>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+<div class="adminApp">
 
-  <div class="logo">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
 
-    <div class="adminTitle">
-      Painel Admin -
+    <div class="logo">
+
+      <div class="adminTitle">
+        Painel Admin -
+      </div>
+
+      <div class="liveImages">
+        Live Images
+      </div>
+
+      <div class="logoLine"></div>
+
     </div>
 
-    <div class="liveImages">
-      Live Images
-    </div>
+    <button
+      id="queueBtn"
+      class="sidebarBtn queueBtn"
+    >
+      FILA
+    </button>
 
-    <div class="logoLine"></div>
+    <button
+      id="historyBtn"
+      class="sidebarBtn historyBtn"
+    >
+      HISTÓRICO
+    </button>
 
   </div>
 
-  <button
-    id="queueBtn"
-    class="sidebarBtn queueBtn"
-  >
-    FILA
-  </button>
+  <!-- CONTEÚDO -->
+  <div class="mainContent">
 
-  <button
-    id="historyBtn"
-    class="sidebarBtn historyBtn"
-  >
-    HISTÓRICO
-  </button>
+    <!-- FILA -->
+    <div id="list"></div>
 
-</div>
+    <!-- HISTÓRICO -->
+    <div
+      id="historyList"
+      style="display:none;"
+    ></div>
 
-<!-- CONTEÚDO -->
-<div class="mainContent">
-
-  <div id="list"></div>
-
-  <div
-    id="historyList"
-    style="display:none;"
-  ></div>
+  </div>
 
 </div>
 
