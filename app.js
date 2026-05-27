@@ -61,7 +61,7 @@ continueBtn.addEventListener("click", () => {
 
   page1.classList.remove("activePage");
 
-  /* MOSTRA ETAPA 2 COM TRANSIÇÃO */
+  /* MOSTRA ETAPA 2 */
 
   setTimeout(() => {
 
@@ -69,11 +69,9 @@ continueBtn.addEventListener("click", () => {
 
   }, 10);
 
-  /* BOLA PROGRESSO */
+  /* PROGRESSO */
 
   step2Ball.classList.add("active");
-
-  /* COMPLETA BARRA */
 
   progressLine.classList.add("progressComplete");
 
@@ -176,7 +174,70 @@ sendBtn.addEventListener("click", async () => {
       }
     );
 
-    status.style.color = "#16a34a";
+    /* =========================
+       STREAMER.BOT
+    ========================= */
+
+    try {
+
+      const ws =
+        new WebSocket("ws://127.0.0.1:8080");
+
+      ws.onopen = () => {
+
+        console.log(
+          "Conectado ao Streamer.bot"
+        );
+
+        ws.send(JSON.stringify({
+
+          request: "DoAction",
+
+          action: {
+            name: "Pay Live Imagem"
+          },
+
+          id: "999"
+
+        }));
+
+      };
+
+      ws.onmessage = (event) => {
+
+        console.log(
+          "Resposta:",
+          event.data
+        );
+
+        ws.close();
+
+      };
+
+      ws.onerror = (error) => {
+
+        console.error(
+          "Erro WebSocket:",
+          error
+        );
+
+      };
+
+    } catch (wsError) {
+
+      console.error(
+        "Erro Streamer.bot:",
+        wsError
+      );
+
+    }
+
+    /* =========================
+       SUCESSO
+    ========================= */
+
+    status.style.color =
+      "#16a34a";
 
     status.innerText =
       "Imagem enviada para aprovação!";
@@ -188,7 +249,8 @@ sendBtn.addEventListener("click", async () => {
 
     console.error(error);
 
-    status.style.color = "red";
+    status.style.color =
+      "red";
 
     status.innerText =
       "Erro ao enviar.";
