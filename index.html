@@ -31,6 +31,13 @@
     <img src="nicfigurinha.png" class="floating">
     <img src="nicfigurinha.png" class="floating">
     <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
 
   </div>
 
@@ -44,7 +51,10 @@
 
         <div class="progressStep active"></div>
 
-        <div class="progressLine"></div>
+        <div
+          class="progressLine"
+          id="progressLine"
+        ></div>
 
         <div
           class="progressStep"
@@ -55,14 +65,47 @@
 
     </div>
 
-    <!-- TÍTULO -->
+    <!-- =========================
+         TÍTULO ANIMADO
+    ========================== -->
+
     <h1 class="title">
 
+<<<<<<< HEAD
       <span class="animatedTitle">
         Live Imagem Pix
       </span>
+=======
+<<<<<<< HEAD
+  <span class="animatedTitle">
+    Live Imagem Pix
+  </span>
+
+</h1>
+=======
+      <div class="titleInner">
+
+        <!-- LIVE IMAGEM -->
+        <span
+          class="titleLive"
+          id="titleLive"
+        >
+          Live Imagem
+        </span>
+
+        <!-- PIX -->
+        <span
+          class="titlePix"
+          id="titlePix"
+        >
+          Pix
+        </span>
+
+      </div>
+>>>>>>> c7cf1e6f5c4e1d22579d652ea736016d2a1392f5
 
     </h1>
+>>>>>>> 11442ad8239a3b4fecae4f60e9151bee40186a65
 
     <!-- =========================
          ETAPA 1
@@ -107,9 +150,9 @@
 
           Sua imagem aparecerá na live após a confirmação do pagamento Pix
 
-<br><br>
+          <br><br>
 
-Clique em continuar para efetuar o pagamento.
+          Clique em continuar para efetuar o pagamento.
 
           <br><br>
 
@@ -193,6 +236,41 @@ Clique em continuar para efetuar o pagamento.
     </div>
 
   </div>
+
+  <!-- =========================
+       SCRIPT TÍTULO
+  ========================== -->
+
+  <script>
+
+    const continueBtn =
+      document.getElementById("continueBtn");
+
+    const titleLive =
+      document.getElementById("titleLive");
+
+    const titlePix =
+      document.getElementById("titlePix");
+
+    const step2Ball =
+      document.getElementById("step2Ball");
+
+    const progressLine =
+      document.getElementById("progressLine");
+
+    continueBtn.addEventListener("click", () => {
+
+      titleLive.classList.add("titleSmall");
+
+      titlePix.classList.add("titleBig");
+
+      step2Ball.classList.add("active");
+
+      progressLine.classList.add("progressComplete");
+
+    });
+
+  </script>
 
   <script
     type="module"

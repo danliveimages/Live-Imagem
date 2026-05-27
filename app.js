@@ -35,6 +35,16 @@ const status =
   document.getElementById("status");
 
 /* =========================
+   TÍTULO ANIMADO
+========================= */
+
+const liveImagemTitle =
+  document.getElementById("liveImagemTitle");
+
+const pixTitle =
+  document.getElementById("pixTitle");
+
+/* =========================
    CONTINUAR
 ========================= */
 
@@ -54,14 +64,13 @@ continueBtn.addEventListener("click", () => {
     alert("Preencha todos os campos.");
 
     return;
-
   }
 
   /* REMOVE ETAPA 1 */
 
   page1.classList.remove("activePage");
 
-  /* MOSTRA ETAPA 2 COM TRANSIÇÃO */
+  /* MOSTRA ETAPA 2 */
 
   setTimeout(() => {
 
@@ -69,13 +78,19 @@ continueBtn.addEventListener("click", () => {
 
   }, 10);
 
-  /* BOLA PROGRESSO */
+  /* PROGRESSO */
 
   step2Ball.classList.add("active");
 
-  /* COMPLETA BARRA */
-
   progressLine.classList.add("progressComplete");
+
+  /* =========================
+     ANIMAÇÃO DO TÍTULO
+  ========================= */
+
+  liveImagemTitle.classList.add("titleSmall");
+
+  pixTitle.classList.add("titleBig");
 
 });
 
@@ -113,7 +128,6 @@ sendBtn.addEventListener("click", async () => {
     alert("Imagem não encontrada.");
 
     return;
-
   }
 
   sendBtn.disabled = true;
@@ -197,7 +211,6 @@ sendBtn.addEventListener("click", async () => {
 
     sendBtn.innerText =
       "CONFIRMAR PAGAMENTO";
-
   }
 
 });
