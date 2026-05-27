@@ -50,102 +50,146 @@ body {
 }
 
 /* =========================
-   VARIAÇÕES
+   16 FIGURINHAS
 ========================= */
 
 .floating:nth-child(1){
-
-  width:90px;
-
-  left:8%;
-  top:12%;
-
-  animation:floatingOne 14s linear infinite;
+  width:80px;
+  left:5%;
+  top:10%;
+  animation:popFloat1 16s linear infinite;
 }
 
 .floating:nth-child(2){
-
-  width:120px;
-
-  left:70%;
-  top:20%;
-
-  animation:floatingTwo 18s linear infinite;
+  width:110px;
+  left:18%;
+  top:22%;
+  animation:popFloat2 18s linear infinite;
 }
 
 .floating:nth-child(3){
-
-  width:80px;
-
-  left:20%;
-  top:55%;
-
-  animation:floatingThree 16s linear infinite;
+  width:95px;
+  left:32%;
+  top:8%;
+  animation:popFloat3 14s linear infinite;
 }
 
 .floating:nth-child(4){
-
-  width:110px;
-
-  left:78%;
-  top:65%;
-
-  animation:floatingFour 20s linear infinite;
+  width:130px;
+  left:48%;
+  top:18%;
+  animation:popFloat4 20s linear infinite;
 }
 
 .floating:nth-child(5){
-
-  width:95px;
-
-  left:40%;
-  top:80%;
-
-  animation:floatingFive 17s linear infinite;
+  width:85px;
+  left:66%;
+  top:12%;
+  animation:popFloat5 17s linear infinite;
 }
 
 .floating:nth-child(6){
-
-  width:75px;
-
-  left:55%;
-  top:10%;
-
-  animation:floatingSix 13s linear infinite;
+  width:120px;
+  left:82%;
+  top:20%;
+  animation:popFloat6 19s linear infinite;
 }
 
 .floating:nth-child(7){
-
-  width:130px;
-
-  left:12%;
-  top:72%;
-
-  animation:floatingSeven 21s linear infinite;
+  width:90px;
+  left:10%;
+  top:52%;
+  animation:popFloat7 15s linear infinite;
 }
 
 .floating:nth-child(8){
+  width:105px;
+  left:24%;
+  top:68%;
+  animation:popFloat8 21s linear infinite;
+}
 
-  width:85px;
+.floating:nth-child(9){
+  width:80px;
+  left:40%;
+  top:58%;
+  animation:popFloat9 16s linear infinite;
+}
 
+.floating:nth-child(10){
+  width:125px;
+  left:56%;
+  top:72%;
+  animation:popFloat10 22s linear infinite;
+}
+
+.floating:nth-child(11){
+  width:95px;
+  left:72%;
+  top:60%;
+  animation:popFloat11 18s linear infinite;
+}
+
+.floating:nth-child(12){
+  width:110px;
   left:88%;
-  top:38%;
+  top:76%;
+  animation:popFloat12 20s linear infinite;
+}
 
-  animation:floatingEight 15s linear infinite;
+.floating:nth-child(13){
+  width:85px;
+  left:14%;
+  top:36%;
+  animation:popFloat13 17s linear infinite;
+}
+
+.floating:nth-child(14){
+  width:100px;
+  left:36%;
+  top:36%;
+  animation:popFloat14 19s linear infinite;
+}
+
+.floating:nth-child(15){
+  width:115px;
+  left:62%;
+  top:40%;
+  animation:popFloat15 21s linear infinite;
+}
+
+.floating:nth-child(16){
+  width:90px;
+  left:84%;
+  top:42%;
+  animation:popFloat16 18s linear infinite;
 }
 
 /* =========================
-   ANIMAÇÕES
+   ANIMAÇÃO BASE
 ========================= */
 
-@keyframes floatingOne {
+@keyframes popBase {
 
   0%{
     opacity:0;
-    transform:translate(0,0) scale(.2) rotate(-10deg);
+    transform:
+      translate(0px,0px)
+      scale(0);
+  }
+
+  6%{
+    opacity:1;
+    transform:
+      translate(0px,0px)
+      scale(1.18);
   }
 
   10%{
     opacity:1;
+    transform:
+      translate(0px,0px)
+      scale(1);
   }
 
   92%{
@@ -154,155 +198,179 @@ body {
 
   100%{
     opacity:0;
-    transform:translate(180px,-140px) scale(1.4) rotate(12deg);
   }
 }
 
-@keyframes floatingTwo {
+/* =========================
+   MOVIMENTOS
+========================= */
 
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.25) rotate(8deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat1{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(-160px,140px) scale(1.5) rotate(-8deg);
+    transform:
+      translate(160px,-140px)
+      scale(1.6)
+      rotate(12deg);
   }
 }
 
-@keyframes floatingThree {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.2) rotate(-5deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat2{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(120px,-170px) scale(1.35) rotate(14deg);
+    transform:
+      translate(-120px,180px)
+      scale(1.7)
+      rotate(-10deg);
   }
 }
 
-@keyframes floatingFour {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.3) rotate(5deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat3{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(-200px,-120px) scale(1.55) rotate(-12deg);
+    transform:
+      translate(140px,160px)
+      scale(1.5)
+      rotate(16deg);
   }
 }
 
-@keyframes floatingFive {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.25) rotate(-8deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat4{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(160px,-180px) scale(1.45) rotate(10deg);
+    transform:
+      translate(-180px,-120px)
+      scale(1.8)
+      rotate(-14deg);
   }
 }
 
-@keyframes floatingSix {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.2) rotate(6deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat5{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(-140px,160px) scale(1.5) rotate(-14deg);
+    transform:
+      translate(120px,-180px)
+      scale(1.7)
+      rotate(10deg);
   }
 }
 
-@keyframes floatingSeven {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.3) rotate(-12deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat6{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(220px,-150px) scale(1.6) rotate(18deg);
+    transform:
+      translate(-160px,150px)
+      scale(1.6)
+      rotate(-12deg);
   }
 }
 
-@keyframes floatingEight {
-
-  0%{
-    opacity:0;
-    transform:translate(0,0) scale(.2) rotate(10deg);
-  }
-
-  10%{
-    opacity:1;
-  }
-
-  92%{
-    opacity:1;
-  }
-
+@keyframes popFloat7{
+  0%,6%,10%,92%,100%{}
   100%{
-    opacity:0;
-    transform:translate(-170px,-170px) scale(1.4) rotate(-16deg);
+    transform:
+      translate(180px,-90px)
+      scale(1.5)
+      rotate(8deg);
   }
+}
+
+@keyframes popFloat8{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(-100px,-170px)
+      scale(1.8)
+      rotate(-16deg);
+  }
+}
+
+@keyframes popFloat9{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(160px,120px)
+      scale(1.7)
+      rotate(12deg);
+  }
+}
+
+@keyframes popFloat10{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(-180px,-140px)
+      scale(1.9)
+      rotate(-10deg);
+  }
+}
+
+@keyframes popFloat11{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(120px,-160px)
+      scale(1.6)
+      rotate(15deg);
+  }
+}
+
+@keyframes popFloat12{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(-140px,-120px)
+      scale(1.7)
+      rotate(-8deg);
+  }
+}
+
+@keyframes popFloat13{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(100px,180px)
+      scale(1.6)
+      rotate(11deg);
+  }
+}
+
+@keyframes popFloat14{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(-120px,150px)
+      scale(1.8)
+      rotate(-15deg);
+  }
+}
+
+@keyframes popFloat15{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(160px,-180px)
+      scale(1.7)
+      rotate(14deg);
+  }
+}
+
+@keyframes popFloat16{
+  0%,6%,10%,92%,100%{}
+  100%{
+    transform:
+      translate(-170px,130px)
+      scale(1.8)
+      rotate(-12deg);
+  }
+}
+
+/* =========================
+   APLICA POP BASE
+========================= */
+
+.floating{
+  animation-name:popBase;
 }
 
 /* =========================
