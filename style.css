@@ -7,6 +7,7 @@
 }
 
 body {
+
   background: #f4f4f4;
 
   min-height: 100vh;
@@ -47,224 +48,234 @@ body {
 
   filter:
     drop-shadow(0 10px 25px rgba(0,0,0,.18));
+
+  will-change:
+    transform,
+    opacity;
 }
 
 /* =========================
-   ANIMAÇÃO BASE
+   ANIMAÇÃO
 ========================= */
 
 @keyframes popFloat {
 
   0%{
+
     opacity:0;
 
     transform:
-      translate(
-        calc(var(--moveXStart) * -0.35),
-        calc(var(--moveYStart) * -0.35)
-      )
+      translate(0px,0px)
       scale(0)
       rotate(0deg);
   }
 
   6%{
+
     opacity:1;
 
     transform:
       translate(
-        calc(var(--moveXStart) * 0.15),
-        calc(var(--moveYStart) * 0.15)
+        calc(var(--moveX) * .06),
+        calc(var(--moveY) * .06)
       )
-      scale(1.25)
-      rotate(calc(var(--rotateEnd) * 0.15));
+      scale(1.32)
+      rotate(calc(var(--rotate) * .06));
   }
 
-  10%{
+  12%{
+
     opacity:1;
 
     transform:
       translate(
-        calc(var(--moveXStart) * 0.22),
-        calc(var(--moveYStart) * 0.22)
+        calc(var(--moveX) * .12),
+        calc(var(--moveY) * .12)
       )
       scale(1)
-      rotate(calc(var(--rotateEnd) * 0.22));
+      rotate(calc(var(--rotate) * .12));
   }
 
-  35%{
+  25%{
 
     transform:
       translate(
-        calc(var(--moveXEnd) * 0.35),
-        calc(var(--moveYEnd) * 0.35)
+        calc(var(--moveX) * .25),
+        calc(var(--moveY) * .25)
       )
-      scale(1.12)
-      rotate(calc(var(--rotateEnd) * 0.35));
+      scale(1.08)
+      rotate(calc(var(--rotate) * .25));
   }
 
-  60%{
+  45%{
 
     transform:
       translate(
-        calc(var(--moveXEnd) * 0.60),
-        calc(var(--moveYEnd) * 0.60)
+        calc(var(--moveX) * .45),
+        calc(var(--moveY) * .45)
       )
-      scale(1.28)
-      rotate(calc(var(--rotateEnd) * 0.60));
+      scale(1.18)
+      rotate(calc(var(--rotate) * .45));
+  }
+
+  70%{
+
+    transform:
+      translate(
+        calc(var(--moveX) * .70),
+        calc(var(--moveY) * .70)
+      )
+      scale(1.30)
+      rotate(calc(var(--rotate) * .70));
   }
 
   92%{
+
     opacity:1;
   }
 
   100%{
+
     opacity:0;
 
     transform:
       translate(
-        var(--moveXEnd),
-        var(--moveYEnd)
+        var(--moveX),
+        var(--moveY)
       )
       scale(var(--scaleEnd))
-      rotate(var(--rotateEnd));
+      rotate(var(--rotate));
   }
 }
 
 /* =========================
-   VARIAÇÕES
+   FIGURINHAS
 ========================= */
 
 .floating:nth-child(1){
 
   width:80px;
 
-  top:10%;
-  left:5%;
+  top:8%;
+  left:4%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:180px;
+  --moveY:-140px;
 
-  --moveXEnd:160px;
-  --moveYEnd:-120px;
+  --rotate:12deg;
 
   --scaleEnd:1.7;
-  --rotateEnd:12deg;
 
-  animation:popFloat 16s linear infinite;
+  animation:
+    popFloat 15s linear infinite;
 }
 
 .floating:nth-child(2){
 
   width:110px;
 
-  top:22%;
-  left:18%;
+  top:18%;
+  left:16%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-150px;
+  --moveY:200px;
 
-  --moveXEnd:-140px;
-  --moveYEnd:180px;
+  --rotate:-14deg;
 
   --scaleEnd:1.8;
-  --rotateEnd:-10deg;
 
-  animation:popFloat 18s linear infinite;
+  animation:
+    popFloat 18s linear infinite;
 }
 
 .floating:nth-child(3){
 
   width:95px;
 
-  top:8%;
-  left:32%;
+  top:10%;
+  left:30%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:160px;
+  --moveY:180px;
 
-  --moveXEnd:130px;
-  --moveYEnd:170px;
+  --rotate:18deg;
 
   --scaleEnd:1.6;
-  --rotateEnd:15deg;
 
-  animation:popFloat 14s linear infinite;
+  animation:
+    popFloat 14s linear infinite;
 }
 
 .floating:nth-child(4){
 
   width:130px;
 
-  top:18%;
-  left:48%;
+  top:16%;
+  left:46%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-190px;
+  --moveY:-150px;
 
-  --moveXEnd:-170px;
-  --moveYEnd:-140px;
+  --rotate:-16deg;
 
   --scaleEnd:1.9;
-  --rotateEnd:-14deg;
 
-  animation:popFloat 20s linear infinite;
+  animation:
+    popFloat 20s linear infinite;
 }
 
 .floating:nth-child(5){
 
-  width:85px;
+  width:90px;
 
   top:12%;
-  left:66%;
+  left:64%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:160px;
+  --moveY:-200px;
 
-  --moveXEnd:140px;
-  --moveYEnd:-180px;
+  --rotate:12deg;
 
   --scaleEnd:1.7;
-  --rotateEnd:11deg;
 
-  animation:popFloat 17s linear infinite;
+  animation:
+    popFloat 17s linear infinite;
 }
 
 .floating:nth-child(6){
 
   width:120px;
 
-  top:20%;
+  top:22%;
   left:82%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-180px;
+  --moveY:170px;
 
-  --moveXEnd:-180px;
-  --moveYEnd:160px;
+  --rotate:-12deg;
 
   --scaleEnd:1.8;
-  --rotateEnd:-12deg;
 
-  animation:popFloat 19s linear infinite;
+  animation:
+    popFloat 19s linear infinite;
 }
 
 .floating:nth-child(7){
 
-  width:90px;
+  width:85px;
 
-  top:52%;
-  left:10%;
+  top:50%;
+  left:8%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:200px;
+  --moveY:-100px;
 
-  --moveXEnd:180px;
-  --moveYEnd:-90px;
+  --rotate:10deg;
 
-  --scaleEnd:1.5;
-  --rotateEnd:8deg;
+  --scaleEnd:1.6;
 
-  animation:popFloat 15s linear infinite;
+  animation:
+    popFloat 15s linear infinite;
 }
 
 .floating:nth-child(8){
@@ -272,37 +283,35 @@ body {
   width:105px;
 
   top:68%;
-  left:24%;
+  left:22%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-120px;
+  --moveY:-190px;
 
-  --moveXEnd:-100px;
-  --moveYEnd:-170px;
+  --rotate:-18deg;
 
   --scaleEnd:1.8;
-  --rotateEnd:-16deg;
 
-  animation:popFloat 21s linear infinite;
+  animation:
+    popFloat 21s linear infinite;
 }
 
 .floating:nth-child(9){
 
   width:80px;
 
-  top:58%;
+  top:56%;
   left:40%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:180px;
+  --moveY:130px;
 
-  --moveXEnd:160px;
-  --moveYEnd:120px;
+  --rotate:12deg;
 
   --scaleEnd:1.7;
-  --rotateEnd:12deg;
 
-  animation:popFloat 16s linear infinite;
+  animation:
+    popFloat 16s linear infinite;
 }
 
 .floating:nth-child(10){
@@ -312,16 +321,15 @@ body {
   top:72%;
   left:56%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-190px;
+  --moveY:-150px;
 
-  --moveXEnd:-180px;
-  --moveYEnd:-140px;
+  --rotate:-12deg;
 
   --scaleEnd:1.9;
-  --rotateEnd:-10deg;
 
-  animation:popFloat 22s linear infinite;
+  animation:
+    popFloat 22s linear infinite;
 }
 
 .floating:nth-child(11){
@@ -329,37 +337,35 @@ body {
   width:95px;
 
   top:60%;
-  left:72%;
+  left:74%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:130px;
+  --moveY:-180px;
 
-  --moveXEnd:120px;
-  --moveYEnd:-160px;
+  --rotate:15deg;
 
   --scaleEnd:1.6;
-  --rotateEnd:15deg;
 
-  animation:popFloat 18s linear infinite;
+  animation:
+    popFloat 18s linear infinite;
 }
 
 .floating:nth-child(12){
 
   width:110px;
 
-  top:76%;
+  top:78%;
   left:88%;
 
-  --moveXStart:0px;
-  --moveYStart:0px;
+  --moveX:-150px;
+  --moveY:-120px;
 
-  --moveXEnd:-140px;
-  --moveYEnd:-120px;
+  --rotate:-10deg;
 
   --scaleEnd:1.7;
-  --rotateEnd:-8deg;
 
-  animation:popFloat 20s linear infinite;
+  animation:
+    popFloat 20s linear infinite;
 }
 
 /* =========================
@@ -367,6 +373,7 @@ body {
 ========================= */
 
 .container {
+
   position: relative;
 
   z-index: 10;
@@ -380,7 +387,8 @@ body {
 
   padding: 35px;
 
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.12);
 
   display: flex;
   flex-direction: column;
@@ -390,7 +398,8 @@ body {
 
   overflow: hidden;
 
-  animation: containerEntry .6s ease;
+  animation:
+    containerEntry .6s ease;
 }
 
 @keyframes containerEntry {
@@ -402,7 +411,6 @@ body {
     transform:
       translateY(20px)
       scale(.98);
-
   }
 
   to {
@@ -412,9 +420,7 @@ body {
     transform:
       translateY(0)
       scale(1);
-
   }
-
 }
 
 /* =========================
@@ -422,17 +428,21 @@ body {
 ========================= */
 
 .progressWrapper {
+
   width: 100%;
 
   margin-bottom: 24px;
 }
 
 .progressSteps {
+
   display: flex;
+
   align-items: center;
 }
 
 .progressStep {
+
   width: 24px;
   height: 24px;
 
@@ -444,6 +454,7 @@ body {
 }
 
 .progressStep.active {
+
   background: linear-gradient(
     90deg,
     #22c55e,
@@ -455,7 +466,8 @@ body {
 
   background-size: 300% 300%;
 
-  animation: rainbowMove 8s ease infinite;
+  animation:
+    rainbowMove 8s ease infinite;
 }
 
 .progressLine {
@@ -482,7 +494,6 @@ body {
   position: absolute;
 
   left: 0;
-
   top: 0;
 
   height: 100%;
@@ -511,29 +522,23 @@ body {
 
   width: 100%;
 
-  animation: rainbowMove 8s ease infinite;
+  animation:
+    rainbowMove 8s ease infinite;
 }
 
 @keyframes progressPulse {
 
-  0% {
-
-    width: 40%;
-
+  0%{
+    width:40%;
   }
 
-  50% {
-
-    width: 60%;
-
+  50%{
+    width:60%;
   }
 
-  100% {
-
-    width: 40%;
-
+  100%{
+    width:40%;
   }
-
 }
 
 /* =========================
@@ -541,6 +546,7 @@ body {
 ========================= */
 
 .title {
+
   text-align: center;
 
   font-size: 2rem;
@@ -577,20 +583,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: rainbowMove 8s ease infinite;
+  animation:
+    rainbowMove 8s ease infinite;
 }
 
 @keyframes rainbowMove {
-  0% {
-    background-position: 0% 50%;
+
+  0%{
+    background-position:0% 50%;
   }
 
-  50% {
-    background-position: 100% 50%;
+  50%{
+    background-position:100% 50%;
   }
 
-  100% {
-    background-position: 0% 50%;
+  100%{
+    background-position:0% 50%;
   }
 }
 
@@ -702,10 +710,12 @@ textarea:focus {
 ========================= */
 
 input[type="file"] {
+
   display: none;
 }
 
 .uploadLabel {
+
   display: block;
 
   width: 100%;
@@ -729,7 +739,8 @@ input[type="file"] {
 
   border-color: #22c55e;
 
-  background: rgba(34,197,94,.04);
+  background:
+    rgba(34,197,94,.04);
 }
 
 /* =========================
@@ -737,6 +748,7 @@ input[type="file"] {
 ========================= */
 
 .paymentAlert {
+
   width: 100%;
 
   background: #fff8dc;
@@ -761,6 +773,7 @@ input[type="file"] {
 ========================= */
 
 button {
+
   width: 100%;
 
   border: none;
@@ -788,6 +801,7 @@ button:hover {
 
 #continueBtn,
 #sendBtn {
+
   background: #22c55e;
 
   color: white;
@@ -797,6 +811,7 @@ button:hover {
 }
 
 #copyBtn {
+
   background: white;
 
   color: #22c55e;
@@ -821,8 +836,6 @@ button:hover {
   background: white;
 
   padding: 10px;
-
-  border-radius: 0;
 
   margin-bottom: 18px;
 
@@ -867,6 +880,7 @@ button:hover {
 ========================= */
 
 #status {
+
   margin-top: 18px;
 
   text-align: center;
@@ -956,5 +970,4 @@ button:hover {
 
     width:calc(100% - 52px);
   }
-
 }
