@@ -179,6 +179,9 @@ body {
   top:8%;
   left:32%;
 
+  --moveXStart:0px;
+  --moveYStart:0px;
+
   --moveXEnd:130px;
   --moveYEnd:170px;
 
@@ -194,6 +197,9 @@ body {
 
   top:18%;
   left:48%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
 
   --moveXEnd:-170px;
   --moveYEnd:-140px;
@@ -211,6 +217,9 @@ body {
   top:12%;
   left:66%;
 
+  --moveXStart:0px;
+  --moveYStart:0px;
+
   --moveXEnd:140px;
   --moveYEnd:-180px;
 
@@ -226,6 +235,9 @@ body {
 
   top:20%;
   left:82%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
 
   --moveXEnd:-180px;
   --moveYEnd:160px;
@@ -243,6 +255,9 @@ body {
   top:52%;
   left:10%;
 
+  --moveXStart:0px;
+  --moveYStart:0px;
+
   --moveXEnd:180px;
   --moveYEnd:-90px;
 
@@ -258,6 +273,9 @@ body {
 
   top:68%;
   left:24%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
 
   --moveXEnd:-100px;
   --moveYEnd:-170px;
@@ -275,6 +293,9 @@ body {
   top:58%;
   left:40%;
 
+  --moveXStart:0px;
+  --moveYStart:0px;
+
   --moveXEnd:160px;
   --moveYEnd:120px;
 
@@ -290,6 +311,9 @@ body {
 
   top:72%;
   left:56%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
 
   --moveXEnd:-180px;
   --moveYEnd:-140px;
@@ -307,6 +331,9 @@ body {
   top:60%;
   left:72%;
 
+  --moveXStart:0px;
+  --moveYStart:0px;
+
   --moveXEnd:120px;
   --moveYEnd:-160px;
 
@@ -322,6 +349,9 @@ body {
 
   top:76%;
   left:88%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
 
   --moveXEnd:-140px;
   --moveYEnd:-120px;
