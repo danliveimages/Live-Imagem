@@ -27,7 +27,9 @@ body {
 ========================= */
 
 .floatingWrapper {
+
   position: fixed;
+
   inset: 0;
 
   overflow: hidden;
@@ -39,86 +41,112 @@ body {
 
 .floating {
 
-  position: absolute;
+  position:absolute;
 
-  width: 220px;
+  width:120px;
 
-  opacity: .95;
+  opacity:0;
 
-  left: -300px;
-
-  animation: horizontalFloat linear infinite;
+  animation:
+    floatingPop linear infinite;
 
   filter:
-    drop-shadow(0 8px 18px rgba(0,0,0,.18));
+    drop-shadow(0 10px 25px rgba(0,0,0,.18));
 }
 
-.floating:nth-child(1) {
+/* =========================
+   POSIÇÕES
+========================= */
 
-  top: 8%;
+.floating:nth-child(1){
 
-  animation-duration: 16s;
+  left:8%;
+  top:12%;
 
-  animation-delay: 0s;
+  animation-duration:14s;
+  animation-delay:0s;
 }
 
-.floating:nth-child(2) {
+.floating:nth-child(2){
 
-  top: 25%;
+  left:72%;
+  top:20%;
 
-  animation-duration: 20s;
-
-  animation-delay: -5s;
+  animation-duration:18s;
+  animation-delay:-4s;
 }
 
-.floating:nth-child(3) {
+.floating:nth-child(3){
 
-  top: 45%;
+  left:20%;
+  top:58%;
 
-  animation-duration: 18s;
-
-  animation-delay: -10s;
+  animation-duration:16s;
+  animation-delay:-8s;
 }
 
-.floating:nth-child(4) {
+.floating:nth-child(4){
 
-  top: 65%;
+  left:78%;
+  top:68%;
 
-  animation-duration: 22s;
-
-  animation-delay: -3s;
+  animation-duration:20s;
+  animation-delay:-2s;
 }
 
-.floating:nth-child(5) {
+.floating:nth-child(5){
 
-  top: 82%;
+  left:42%;
+  top:38%;
 
-  animation-duration: 17s;
-
-  animation-delay: -7s;
+  animation-duration:15s;
+  animation-delay:-6s;
 }
 
-@keyframes horizontalFloat {
+/* =========================
+   ANIMAÇÃO NOVA
+========================= */
 
-  from {
+@keyframes floatingPop {
+
+  0%{
+
+    opacity:0;
 
     transform:
-      translateX(-350px);
-
-    opacity: 0;
+      translate(0px, 0px)
+      scale(.2)
+      rotate(-8deg);
   }
 
-  10% {
+  15%{
 
-    opacity: 1;
-  }
-
-  100% {
+    opacity:1;
 
     transform:
-      translateX(150vw);
+      translate(20px, -20px)
+      scale(1)
+      rotate(0deg);
+  }
 
-    opacity: .95;
+  70%{
+
+    opacity:1;
+
+    transform:
+      translate(80px, -90px)
+      scale(1.25)
+      rotate(6deg);
+  }
+
+  100%{
+
+    opacity:0;
+
+    transform:
+      translate(130px, -140px)
+      scale(1.45)
+      rotate(10deg);
   }
 }
 
@@ -146,7 +174,7 @@ body {
   flex-direction: column;
   align-items: center;
 
-  min-height: 800px;
+  min-height: 870px;
 
   overflow: hidden;
 
@@ -184,7 +212,7 @@ body {
 .progressWrapper {
   width: 100%;
 
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .progressSteps {
@@ -306,23 +334,12 @@ body {
   font-size: 2rem;
   font-weight: bold;
 
-  margin-bottom: 42px;
+  margin-bottom: 60px;
 
   letter-spacing: -1px;
-
-  line-height: 1.15;
-
-  overflow: visible;
-
-  padding-bottom: 6px;
 }
 
 .animatedTitle {
-
-  display: inline-block;
-
-  padding-bottom: 10px;
-
   background: linear-gradient(
     90deg,
     #22c55e,
@@ -355,366 +372,28 @@ body {
 }
 
 /* =========================
-   PÁGINAS
-========================= */
-
-.page {
-
-  position: absolute;
-
-  top: 150px;
-
-  left: 35px;
-
-  width: calc(100% - 70px);
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  opacity: 0;
-
-  visibility: hidden;
-
-  pointer-events: none;
-
-  transform:
-    translateX(40px)
-    scale(.98);
-
-  transition:
-    opacity .45s ease,
-    transform .45s ease,
-    visibility .45s;
-}
-
-.activePage {
-
-  opacity: 1;
-
-  visibility: visible;
-
-  pointer-events: auto;
-
-  transform:
-    translateX(0)
-    scale(1);
-}
-
-/* =========================
-   INPUTS
-========================= */
-
-input[type="text"],
-textarea {
-
-  width: 100%;
-
-  height: 60px;
-
-  padding: 18px;
-
-  border-radius: 20px;
-
-  border: 1px solid #ddd;
-
-  outline: none;
-
-  margin-bottom: 18px;
-
-  font-size: 1rem;
-
-  transition: .25s ease;
-}
-
-textarea {
-
-  resize: none;
-
-  min-height: 60px;
-
-  max-height: 60px;
-
-  overflow: hidden;
-
-  line-height: 22px;
-}
-
-input:hover,
-textarea:hover {
-
-  border-color: #22c55e;
-}
-
-input[type="text"]:focus,
-textarea:focus {
-
-  border-color: #22c55e;
-
-  box-shadow:
-    0 0 0 4px rgba(34,197,94,.12);
-}
-
-/* =========================
-   UPLOAD
-========================= */
-
-input[type="file"] {
-  display: none;
-}
-
-.uploadLabel {
-  display: block;
-
-  width: 100%;
-
-  padding: 18px;
-
-  border-radius: 20px;
-
-  border: 2px dashed #ccc;
-
-  text-align: center;
-
-  cursor: pointer;
-
-  margin-bottom: 22px;
-
-  transition: .25s ease;
-}
-
-.uploadLabel:hover {
-
-  border-color: #22c55e;
-
-  background: rgba(34,197,94,.04);
-}
-
-/* =========================
-   ALERTA
-========================= */
-
-.paymentAlert {
-  width: 100%;
-
-  background: #fff8dc;
-
-  border: 1px solid #ffe58f;
-
-  padding: 18px;
-
-  border-radius: 20px;
-
-  margin-bottom: 22px;
-
-  text-align: center;
-
-  line-height: 1.5;
-
-  font-size: 18px;
-}
-
-/* =========================
-   BOTÕES
-========================= */
-
-button {
-  width: 100%;
-
-  border: none;
-
-  border-radius: 22px;
-
-  padding: 18px;
-
-  cursor: pointer;
-
-  font-size: 1rem;
-  font-weight: bold;
-
-  transition:
-    transform .2s ease,
-    opacity .2s ease;
-}
-
-button:hover {
-
-  transform: scale(1.02);
-
-  opacity: .96;
-}
-
-#continueBtn,
-#sendBtn {
-  background: #22c55e;
-
-  color: white;
-
-  box-shadow:
-    0 10px 25px rgba(34,197,94,.25);
-}
-
-#copyBtn {
-  background: white;
-
-  color: #22c55e;
-
-  border: 2px solid #22c55e;
-
-  margin-top: 0;
-
-  margin-bottom: 18px;
-}
-
-/* =========================
-   QR CODE
-========================= */
-
-.pixImage {
-
-  width: 220px;
-
-  max-width: 100%;
-
-  background: white;
-
-  padding: 10px;
-
-  border-radius: 0;
-
-  margin-bottom: 18px;
-
-  display: block;
-}
-
-/* =========================
-   PIX KEY
-========================= */
-
-.pixKey {
-
-  width: 100%;
-
-  margin-top: 10px;
-
-  margin-bottom: 18px;
-
-  padding: 14px;
-
-  border-radius: 18px;
-
-  background: #f5f5f5;
-
-  border: 1px solid #e5e5e5;
-
-  color: #333;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  text-align: center;
-
-  overflow-wrap: anywhere;
-
-  word-break: break-word;
-}
-
-/* =========================
-   STATUS
-========================= */
-
-#status {
-  margin-top: 18px;
-
-  text-align: center;
-
-  font-weight: bold;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-
-  position: absolute;
-
-  bottom: 22px;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 100%;
-
-  text-align: center;
-
-  color: #777;
-
-  font-size: 15px;
-
-  line-height: 1.3;
-}
-
-/* =========================
-   MOBILE
+   MOBILE TITLE
 ========================= */
 
 @media (max-width:700px){
 
-  body{
-
-    padding:14px;
-  }
-
-  .container{
-
-    max-width:100%;
-
-    min-height:840px;
-
-    padding:26px;
-  }
-
-  .progressWrapper{
-
-    margin-bottom:18px;
-  }
-
   .title{
 
-    font-size:clamp(24px, 7vw, 38px);
+    font-size:clamp(28px, 7vw, 42px);
 
-    margin-bottom:22px;
+    line-height:1.15;
 
-    line-height:1.2;
+    padding-bottom:8px;
+
+    margin-bottom:42px;
+
+    text-align:center;
 
     white-space:nowrap;
 
-    overflow:visible;
+    letter-spacing:-1px;
 
-    padding-bottom:10px;
-  }
-
-  .animatedTitle{
-
-    display:inline-block;
-
-    padding-bottom:14px;
-
-    transform:translateY(2px);
-  }
-
-  .page{
-
-    top:125px;
-
-    left:26px;
-
-    width:calc(100% - 52px);
+    width:100%;
   }
 
 }
