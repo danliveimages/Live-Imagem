@@ -179,8 +179,9 @@ onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
 
     if(
-      change.type === "modified"
-    ){
+  change.type === "added" ||
+  change.type === "modified"
+){
 
       const data =
         change.doc.data();
