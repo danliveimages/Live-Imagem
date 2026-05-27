@@ -44,6 +44,13 @@ const historyBtn =
   document.getElementById("historyBtn");
 
 /* =========================
+   CONTROLE ALERTA
+========================= */
+
+const paymentAlertsTriggered =
+  new Set();
+
+/* =========================
    ABA INICIAL
 ========================= */
 
@@ -159,7 +166,7 @@ function triggerStreamerBotAction(actionName){
    REALTIME
 ========================= */
 
-onSnapshot(q, async (snapshot) => {
+onSnapshot(q, (snapshot) => {
 
   list.innerHTML = "";
 
@@ -175,35 +182,14 @@ onSnapshot(q, async (snapshot) => {
 
     if(
       data.paymentConfirmed === true &&
-      data.paymentAlertSent !== true
+      !paymentAlertsTriggered.has(docSnap.id)
     ){
+
+      paymentAlertsTriggered.add(docSnap.id);
 
       triggerStreamerBotAction(
         "Pay Live Imagem"
       );
-
-      try {
-
-        await updateDoc(
-
-          doc(db, "submissions", docSnap.id),
-
-          {
-            paymentAlertSent: true
-          }
-
-        );
-
-      }
-
-      catch(error){
-
-        console.error(
-          "Erro ao atualizar alerta:",
-          error
-        );
-
-      }
 
     }
 
