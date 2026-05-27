@@ -172,26 +172,49 @@ onSnapshot(q, (snapshot) => {
 
   historyList.innerHTML = "";
 
-  for (const docSnap of snapshot.docs) {
+  /* =========================
+     ALTERAÇÕES REALTIME
+  ========================= */
 
-    const data = docSnap.data();
-
-    /* =========================
-       ALERTA PAGAMENTO
-    ========================= */
+  snapshot.docChanges().forEach((change) => {
 
     if(
-      data.paymentConfirmed === true &&
-      !paymentAlertsTriggered.has(docSnap.id)
+      change.type === "modified"
     ){
 
-      paymentAlertsTriggered.add(docSnap.id);
+      const data =
+        change.doc.data();
 
-      triggerStreamerBotAction(
-        "Pay Live Imagem"
-      );
+      /* =========================
+         SOM PAGAMENTO
+      ========================= */
+
+      if(
+        data.paymentConfirmed === true &&
+        !paymentAlertsTriggered.has(change.doc.id)
+      ){
+
+        paymentAlertsTriggered.add(
+          change.doc.id
+        );
+
+        triggerStreamerBotAction(
+          "Pay Live Imagem"
+        );
+
+      }
 
     }
+
+  });
+
+  /* =========================
+     RENDERIZA CARDS
+  ========================= */
+
+  snapshot.forEach((docSnap) => {
+
+    const data = docSnap.data();
 
     /* =========================
        DATA SEGURA
@@ -290,7 +313,7 @@ onSnapshot(q, (snapshot) => {
 
     }
 
-  }
+  });
 
 });
 
