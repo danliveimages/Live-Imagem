@@ -59,24 +59,58 @@ body {
     opacity:0;
 
     transform:
-      translate(0px,0px)
-      scale(0);
+      translate(
+        calc(var(--moveXStart) * -0.35),
+        calc(var(--moveYStart) * -0.35)
+      )
+      scale(0)
+      rotate(0deg);
   }
 
   6%{
     opacity:1;
 
     transform:
-      translate(var(--moveXStart), var(--moveYStart))
-      scale(1.25);
+      translate(
+        calc(var(--moveXStart) * 0.15),
+        calc(var(--moveYStart) * 0.15)
+      )
+      scale(1.25)
+      rotate(calc(var(--rotateEnd) * 0.15));
   }
 
   10%{
     opacity:1;
 
     transform:
-      translate(var(--moveXStart), var(--moveYStart))
-      scale(1);
+      translate(
+        calc(var(--moveXStart) * 0.22),
+        calc(var(--moveYStart) * 0.22)
+      )
+      scale(1)
+      rotate(calc(var(--rotateEnd) * 0.22));
+  }
+
+  35%{
+
+    transform:
+      translate(
+        calc(var(--moveXEnd) * 0.35),
+        calc(var(--moveYEnd) * 0.35)
+      )
+      scale(1.12)
+      rotate(calc(var(--rotateEnd) * 0.35));
+  }
+
+  60%{
+
+    transform:
+      translate(
+        calc(var(--moveXEnd) * 0.60),
+        calc(var(--moveYEnd) * 0.60)
+      )
+      scale(1.28)
+      rotate(calc(var(--rotateEnd) * 0.60));
   }
 
   92%{
@@ -87,7 +121,10 @@ body {
     opacity:0;
 
     transform:
-      translate(var(--moveXEnd), var(--moveYEnd))
+      translate(
+        var(--moveXEnd),
+        var(--moveYEnd)
+      )
       scale(var(--scaleEnd))
       rotate(var(--rotateEnd));
   }
