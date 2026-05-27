@@ -50,129 +50,14 @@ body {
 }
 
 /* =========================
-   16 FIGURINHAS
-========================= */
-
-.floating:nth-child(1){
-  width:80px;
-  left:5%;
-  top:10%;
-  animation:popFloat1 16s linear infinite;
-}
-
-.floating:nth-child(2){
-  width:110px;
-  left:18%;
-  top:22%;
-  animation:popFloat2 18s linear infinite;
-}
-
-.floating:nth-child(3){
-  width:95px;
-  left:32%;
-  top:8%;
-  animation:popFloat3 14s linear infinite;
-}
-
-.floating:nth-child(4){
-  width:130px;
-  left:48%;
-  top:18%;
-  animation:popFloat4 20s linear infinite;
-}
-
-.floating:nth-child(5){
-  width:85px;
-  left:66%;
-  top:12%;
-  animation:popFloat5 17s linear infinite;
-}
-
-.floating:nth-child(6){
-  width:120px;
-  left:82%;
-  top:20%;
-  animation:popFloat6 19s linear infinite;
-}
-
-.floating:nth-child(7){
-  width:90px;
-  left:10%;
-  top:52%;
-  animation:popFloat7 15s linear infinite;
-}
-
-.floating:nth-child(8){
-  width:105px;
-  left:24%;
-  top:68%;
-  animation:popFloat8 21s linear infinite;
-}
-
-.floating:nth-child(9){
-  width:80px;
-  left:40%;
-  top:58%;
-  animation:popFloat9 16s linear infinite;
-}
-
-.floating:nth-child(10){
-  width:125px;
-  left:56%;
-  top:72%;
-  animation:popFloat10 22s linear infinite;
-}
-
-.floating:nth-child(11){
-  width:95px;
-  left:72%;
-  top:60%;
-  animation:popFloat11 18s linear infinite;
-}
-
-.floating:nth-child(12){
-  width:110px;
-  left:88%;
-  top:76%;
-  animation:popFloat12 20s linear infinite;
-}
-
-.floating:nth-child(13){
-  width:85px;
-  left:14%;
-  top:36%;
-  animation:popFloat13 17s linear infinite;
-}
-
-.floating:nth-child(14){
-  width:100px;
-  left:36%;
-  top:36%;
-  animation:popFloat14 19s linear infinite;
-}
-
-.floating:nth-child(15){
-  width:115px;
-  left:62%;
-  top:40%;
-  animation:popFloat15 21s linear infinite;
-}
-
-.floating:nth-child(16){
-  width:90px;
-  left:84%;
-  top:42%;
-  animation:popFloat16 18s linear infinite;
-}
-
-/* =========================
    ANIMAÇÃO BASE
 ========================= */
 
-@keyframes popBase {
+@keyframes popFloat {
 
   0%{
     opacity:0;
+
     transform:
       translate(0px,0px)
       scale(0);
@@ -180,15 +65,17 @@ body {
 
   6%{
     opacity:1;
+
     transform:
-      translate(0px,0px)
-      scale(1.18);
+      translate(var(--moveXStart), var(--moveYStart))
+      scale(1.25);
   }
 
   10%{
     opacity:1;
+
     transform:
-      translate(0px,0px)
+      translate(var(--moveXStart), var(--moveYStart))
       scale(1);
   }
 
@@ -198,179 +85,214 @@ body {
 
   100%{
     opacity:0;
+
+    transform:
+      translate(var(--moveXEnd), var(--moveYEnd))
+      scale(var(--scaleEnd))
+      rotate(var(--rotateEnd));
   }
 }
 
 /* =========================
-   MOVIMENTOS
+   VARIAÇÕES
 ========================= */
 
-@keyframes popFloat1{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(160px,-140px)
-      scale(1.6)
-      rotate(12deg);
-  }
+.floating:nth-child(1){
+
+  width:80px;
+
+  top:10%;
+  left:5%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
+
+  --moveXEnd:160px;
+  --moveYEnd:-120px;
+
+  --scaleEnd:1.7;
+  --rotateEnd:12deg;
+
+  animation:popFloat 16s linear infinite;
 }
 
-@keyframes popFloat2{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-120px,180px)
-      scale(1.7)
-      rotate(-10deg);
-  }
+.floating:nth-child(2){
+
+  width:110px;
+
+  top:22%;
+  left:18%;
+
+  --moveXStart:0px;
+  --moveYStart:0px;
+
+  --moveXEnd:-140px;
+  --moveYEnd:180px;
+
+  --scaleEnd:1.8;
+  --rotateEnd:-10deg;
+
+  animation:popFloat 18s linear infinite;
 }
 
-@keyframes popFloat3{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(140px,160px)
-      scale(1.5)
-      rotate(16deg);
-  }
+.floating:nth-child(3){
+
+  width:95px;
+
+  top:8%;
+  left:32%;
+
+  --moveXEnd:130px;
+  --moveYEnd:170px;
+
+  --scaleEnd:1.6;
+  --rotateEnd:15deg;
+
+  animation:popFloat 14s linear infinite;
 }
 
-@keyframes popFloat4{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-180px,-120px)
-      scale(1.8)
-      rotate(-14deg);
-  }
+.floating:nth-child(4){
+
+  width:130px;
+
+  top:18%;
+  left:48%;
+
+  --moveXEnd:-170px;
+  --moveYEnd:-140px;
+
+  --scaleEnd:1.9;
+  --rotateEnd:-14deg;
+
+  animation:popFloat 20s linear infinite;
 }
 
-@keyframes popFloat5{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(120px,-180px)
-      scale(1.7)
-      rotate(10deg);
-  }
+.floating:nth-child(5){
+
+  width:85px;
+
+  top:12%;
+  left:66%;
+
+  --moveXEnd:140px;
+  --moveYEnd:-180px;
+
+  --scaleEnd:1.7;
+  --rotateEnd:11deg;
+
+  animation:popFloat 17s linear infinite;
 }
 
-@keyframes popFloat6{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-160px,150px)
-      scale(1.6)
-      rotate(-12deg);
-  }
+.floating:nth-child(6){
+
+  width:120px;
+
+  top:20%;
+  left:82%;
+
+  --moveXEnd:-180px;
+  --moveYEnd:160px;
+
+  --scaleEnd:1.8;
+  --rotateEnd:-12deg;
+
+  animation:popFloat 19s linear infinite;
 }
 
-@keyframes popFloat7{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(180px,-90px)
-      scale(1.5)
-      rotate(8deg);
-  }
+.floating:nth-child(7){
+
+  width:90px;
+
+  top:52%;
+  left:10%;
+
+  --moveXEnd:180px;
+  --moveYEnd:-90px;
+
+  --scaleEnd:1.5;
+  --rotateEnd:8deg;
+
+  animation:popFloat 15s linear infinite;
 }
 
-@keyframes popFloat8{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-100px,-170px)
-      scale(1.8)
-      rotate(-16deg);
-  }
+.floating:nth-child(8){
+
+  width:105px;
+
+  top:68%;
+  left:24%;
+
+  --moveXEnd:-100px;
+  --moveYEnd:-170px;
+
+  --scaleEnd:1.8;
+  --rotateEnd:-16deg;
+
+  animation:popFloat 21s linear infinite;
 }
 
-@keyframes popFloat9{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(160px,120px)
-      scale(1.7)
-      rotate(12deg);
-  }
+.floating:nth-child(9){
+
+  width:80px;
+
+  top:58%;
+  left:40%;
+
+  --moveXEnd:160px;
+  --moveYEnd:120px;
+
+  --scaleEnd:1.7;
+  --rotateEnd:12deg;
+
+  animation:popFloat 16s linear infinite;
 }
 
-@keyframes popFloat10{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-180px,-140px)
-      scale(1.9)
-      rotate(-10deg);
-  }
+.floating:nth-child(10){
+
+  width:125px;
+
+  top:72%;
+  left:56%;
+
+  --moveXEnd:-180px;
+  --moveYEnd:-140px;
+
+  --scaleEnd:1.9;
+  --rotateEnd:-10deg;
+
+  animation:popFloat 22s linear infinite;
 }
 
-@keyframes popFloat11{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(120px,-160px)
-      scale(1.6)
-      rotate(15deg);
-  }
+.floating:nth-child(11){
+
+  width:95px;
+
+  top:60%;
+  left:72%;
+
+  --moveXEnd:120px;
+  --moveYEnd:-160px;
+
+  --scaleEnd:1.6;
+  --rotateEnd:15deg;
+
+  animation:popFloat 18s linear infinite;
 }
 
-@keyframes popFloat12{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-140px,-120px)
-      scale(1.7)
-      rotate(-8deg);
-  }
-}
+.floating:nth-child(12){
 
-@keyframes popFloat13{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(100px,180px)
-      scale(1.6)
-      rotate(11deg);
-  }
-}
+  width:110px;
 
-@keyframes popFloat14{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-120px,150px)
-      scale(1.8)
-      rotate(-15deg);
-  }
-}
+  top:76%;
+  left:88%;
 
-@keyframes popFloat15{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(160px,-180px)
-      scale(1.7)
-      rotate(14deg);
-  }
-}
+  --moveXEnd:-140px;
+  --moveYEnd:-120px;
 
-@keyframes popFloat16{
-  0%,6%,10%,92%,100%{}
-  100%{
-    transform:
-      translate(-170px,130px)
-      scale(1.8)
-      rotate(-12deg);
-  }
-}
+  --scaleEnd:1.7;
+  --rotateEnd:-8deg;
 
-/* =========================
-   APLICA POP BASE
-========================= */
-
-.floating{
-  animation-name:popBase;
+  animation:popFloat 20s linear infinite;
 }
 
 /* =========================
