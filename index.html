@@ -31,6 +31,13 @@
     <img src="nicfigurinha.png" class="floating">
     <img src="nicfigurinha.png" class="floating">
     <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
+    <img src="nicfigurinha.png" class="floating">
 
   </div>
 
@@ -44,7 +51,10 @@
 
         <div class="progressStep active"></div>
 
-        <div class="progressLine"></div>
+        <div
+          class="progressLine"
+          id="progressLine"
+        ></div>
 
         <div
           class="progressStep"
@@ -55,20 +65,31 @@
 
     </div>
 
-    <!-- TÍTULO -->
+    <!-- =========================
+         TÍTULO ANIMADO
+    ========================== -->
+
     <h1 class="title">
 
-      <span class="animatedTitle">
-        Pix
-      </span>
+      <div class="titleInner">
 
-      <span class="animatedTitle">
-        -
-      </span>
+        <!-- LIVE IMAGEM -->
+        <span
+          class="titleLive"
+          id="titleLive"
+        >
+          Live Imagem
+        </span>
 
-      <span class="animatedTitle">
-        Live Imagem
-      </span>
+        <!-- PIX -->
+        <span
+          class="titlePix"
+          id="titlePix"
+        >
+          Pix
+        </span>
+
+      </div>
 
     </h1>
 
@@ -115,9 +136,9 @@
 
           Sua imagem aparecerá na live após a confirmação do pagamento Pix
 
-<br><br>
+          <br><br>
 
-Clique em continuar para efetuar o pagamento.
+          Clique em continuar para efetuar o pagamento.
 
           <br><br>
 
@@ -201,6 +222,41 @@ Clique em continuar para efetuar o pagamento.
     </div>
 
   </div>
+
+  <!-- =========================
+       SCRIPT TÍTULO
+  ========================== -->
+
+  <script>
+
+    const continueBtn =
+      document.getElementById("continueBtn");
+
+    const titleLive =
+      document.getElementById("titleLive");
+
+    const titlePix =
+      document.getElementById("titlePix");
+
+    const step2Ball =
+      document.getElementById("step2Ball");
+
+    const progressLine =
+      document.getElementById("progressLine");
+
+    continueBtn.addEventListener("click", () => {
+
+      titleLive.classList.add("titleSmall");
+
+      titlePix.classList.add("titleBig");
+
+      step2Ball.classList.add("active");
+
+      progressLine.classList.add("progressComplete");
+
+    });
+
+  </script>
 
   <script
     type="module"
