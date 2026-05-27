@@ -57,13 +57,9 @@ queueBtn.classList.add("activeTab");
 
 queueBtn.addEventListener("click", () => {
 
-  /* TELAS */
-
   list.classList.add("activeSection");
 
   historyList.classList.remove("activeSection");
-
-  /* BOTÕES */
 
   queueBtn.classList.add("activeTab");
 
@@ -73,13 +69,9 @@ queueBtn.addEventListener("click", () => {
 
 historyBtn.addEventListener("click", () => {
 
-  /* TELAS */
-
   historyList.classList.add("activeSection");
 
   list.classList.remove("activeSection");
-
-  /* BOTÕES */
 
   historyBtn.classList.add("activeTab");
 
@@ -100,18 +92,120 @@ const q = query(
 );
 
 /* =========================
+   WEBSOCKET STREAMER.BOT
+========================= */
+
+function triggerStreamerBotAction(actionName){
+
+  try {
+
+    const ws =
+      new WebSocket("ws://127.0.0.1:8080");
+
+    ws.onopen = () => {
+
+      console.log(
+        "Conectado ao Streamer.bot"
+      );
+
+      ws.send(JSON.stringify({
+
+        request: "DoAction",
+
+        action: {
+          name: actionName
+        },
+
+        id: String(Date.now())
+
+      }));
+
+    };
+
+    ws.onmessage = (event) => {
+
+      console.log(
+        "Resposta:",
+        event.data
+      );
+
+      ws.close();
+
+    };
+
+    ws.onerror = (error) => {
+
+      console.error(
+        "Erro WebSocket:",
+        error
+      );
+
+    };
+
+  }
+
+  catch(error){
+
+    console.error(
+      "Erro Streamer.bot:",
+      error
+    );
+
+  }
+
+}
+
+/* =========================
    REALTIME
 ========================= */
 
-onSnapshot(q, (snapshot) => {
+onSnapshot(q, async (snapshot) => {
 
   list.innerHTML = "";
 
   historyList.innerHTML = "";
 
-  snapshot.forEach((docSnap) => {
+  for (const docSnap of snapshot.docs) {
 
     const data = docSnap.data();
+
+    /* =========================
+       ALERTA PAGAMENTO
+    ========================= */
+
+    if(
+      data.paymentConfirmed === true &&
+      data.paymentAlertSent !== true
+    ){
+
+      triggerStreamerBotAction(
+        "Pay Live Imagem"
+      );
+
+      try {
+
+        await updateDoc(
+
+          doc(db, "submissions", docSnap.id),
+
+          {
+            paymentAlertSent: true
+          }
+
+        );
+
+      }
+
+      catch(error){
+
+        console.error(
+          "Erro ao atualizar alerta:",
+          error
+        );
+
+      }
+
+    }
 
     /* =========================
        DATA SEGURA
@@ -210,7 +304,7 @@ onSnapshot(q, (snapshot) => {
 
     }
 
-  });
+  }
 
 });
 
@@ -234,48 +328,17 @@ window.approve = async function(id){
 
     );
 
-    console.log("Imagem aprovada");
+    console.log(
+      "Imagem aprovada"
+    );
 
     /* =========================
-       WEBSOCKET
+       STREAMER.BOT
     ========================= */
 
-    const ws =
-      new WebSocket("ws://127.0.0.1:8080");
-
-    ws.onopen = () => {
-
-      console.log("Conectado ao Streamer.bot");
-
-      ws.send(JSON.stringify({
-
-        request: "DoAction",
-
-        action: {
-          name: "Live Images"
-        },
-
-        id: "123"
-
-      }));
-
-    };
-
-    ws.onmessage = (event) => {
-
-      console.log("Resposta:", event.data);
-
-      ws.close();
-
-    };
-
-    ws.onerror = (error) => {
-
-      console.error(error);
-
-      alert("Erro WebSocket");
-
-    };
+    triggerStreamerBotAction(
+      "Live Images"
+    );
 
   }
 
@@ -308,7 +371,9 @@ window.reject = async function(id){
 
     );
 
-    console.log("Imagem recusada");
+    console.log(
+      "Imagem recusada"
+    );
 
   }
 

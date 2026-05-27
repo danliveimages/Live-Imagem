@@ -170,67 +170,13 @@ sendBtn.addEventListener("click", async () => {
 
         shown: false,
 
+        paymentConfirmed: true,
+
+        paymentAlertSent: false,
+
         createdAt: serverTimestamp()
       }
     );
-
-    /* =========================
-       STREAMER.BOT
-    ========================= */
-
-    try {
-
-      const ws =
-        new WebSocket("ws://127.0.0.1:8080");
-
-      ws.onopen = () => {
-
-        console.log(
-          "Conectado ao Streamer.bot"
-        );
-
-        ws.send(JSON.stringify({
-
-          request: "DoAction",
-
-          action: {
-            name: "Pay Live Imagem"
-          },
-
-          id: "999"
-
-        }));
-
-      };
-
-      ws.onmessage = (event) => {
-
-        console.log(
-          "Resposta:",
-          event.data
-        );
-
-        ws.close();
-
-      };
-
-      ws.onerror = (error) => {
-
-        console.error(
-          "Erro WebSocket:",
-          error
-        );
-
-      };
-
-    } catch (wsError) {
-
-      console.error(
-        "Erro Streamer.bot:",
-        wsError
-      );
-
-    }
 
     /* =========================
        SUCESSO
