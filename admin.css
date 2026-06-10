@@ -104,7 +104,7 @@ body{
 
 .liveImages{
 
-  margin-top:8px;
+  white-space: nowrap;
 
   font-size:48px;
   font-weight:800;
