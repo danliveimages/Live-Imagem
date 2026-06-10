@@ -106,42 +106,9 @@ body{
 
   margin-top:8px;
 
-  font-size:58px;
-
+  font-size:48px;
   font-weight:800;
-
   letter-spacing:-1px;
-
-  background:linear-gradient(
-    90deg,
-    #22c55e 0%,
-    #3b82f6 12%,
-    #a855f7 24%,
-    #ef4444 36%,
-    #facc15 48%,
-    #22c55e 60%,
-    #3b82f6 72%,
-    #a855f7 84%,
-    #ef4444 100%
-  );
-
-  background-size:400% 100%;
-
-  -webkit-background-clip:text;
-
-  -webkit-text-fill-color:transparent;
-
-  animation:smoothRainbow 14s linear infinite;
-}
-
-.logoLine{
-
-  width:190px;
-  height:4px;
-
-  border-radius:999px;
-
-  margin:24px auto 0 auto;
 
   background:linear-gradient(
     90deg,
@@ -153,22 +120,26 @@ body{
     #22c55e
   );
 
-  background-size:400% 100%;
+  background-size:300% 300%;
 
-  animation:smoothRainbow 14s linear infinite;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 
-  box-shadow:
-    0 0 24px rgba(59,130,246,.35);
+  animation:rainbowFlow 8s ease-in-out infinite;
 }
 
-@keyframes smoothRainbow{
+@keyframes rainbowFlow{
 
   0%{
     background-position:0% 50%;
   }
 
+  50%{
+    background-position:100% 50%;
+  }
+
   100%{
-    background-position:400% 50%;
+    background-position:0% 50%;
   }
 }
 
