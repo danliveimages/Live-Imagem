@@ -103,10 +103,12 @@ body{
 ========================= */
 
 .liveImages{
+  margin-top:8px;
 
   white-space: nowrap;
+  display:block;
 
-  font-size:48px;
+  font-size:36px;
   font-weight:800;
   letter-spacing:-1px;
 
