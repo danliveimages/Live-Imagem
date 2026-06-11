@@ -960,18 +960,13 @@ box-shadow:
 
 .dateFilterScroll::-webkit-scrollbar{
 
-  width:4px;
-}
-
-.dateFilterScroll::-webkit-scrollbar-track{
-
-  background:transparent;
+  width:6px;
 }
 
 .dateFilterScroll::-webkit-scrollbar-thumb{
 
   background:
-    rgba(255,255,255,.12);
+    rgba(255,255,255,.35);
 
   border-radius:999px;
 }
@@ -979,5 +974,5 @@ box-shadow:
 .dateFilterScroll::-webkit-scrollbar-thumb:hover{
 
   background:
-    rgba(255,255,255,.28);
+    rgba(255,255,255,.55);
 }
