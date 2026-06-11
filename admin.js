@@ -365,9 +365,9 @@ window.approve = async function(id){
     );
 
     await new Promise(
-      resolve =>
-        setTimeout(resolve, 350)
-    );
+  resolve =>
+    setTimeout(resolve, 200)
+);
   }
 
   try {
