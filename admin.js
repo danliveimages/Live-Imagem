@@ -264,8 +264,6 @@ await updateDoc(
 card.className = "card";
 
 if(
-  !data.approved &&
-  !data.rejected &&
   !animatedCards.has(docSnap.id)
 ){
 
