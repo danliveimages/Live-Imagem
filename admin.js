@@ -291,13 +291,18 @@ card.dataset.id = docSnap.id;
       </button>
     `
     : `
-      <button
-        class="rejectBtn"
-        onclick="deleteSubmission('${docSnap.id}')"
-      >
-        Excluir
-      </button>
-    `
+      : `
+  <button onclick="approve('${docSnap.id}')">
+    Reaprovar
+  </button>
+
+  <button
+    class="rejectBtn"
+    onclick="deleteSubmission('${docSnap.id}')"
+  >
+    Excluir
+  </button>
+`
   }
 
 </div>
