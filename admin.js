@@ -244,7 +244,12 @@ await updateDoc(
      RENDERIZA CARDS
   ========================= */
 
-  snapshot.forEach((docSnap) => {
+console.log(
+  "RENDER FILA",
+  Date.now()
+);
+  
+snapshot.forEach((docSnap) => {
 
     const data = docSnap.data();
 
