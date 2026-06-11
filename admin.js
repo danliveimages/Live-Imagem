@@ -205,6 +205,15 @@ if(
       const data =
         change.doc.data();
 
+console.log(
+  "DOC:",
+  change.doc.id,
+  "APPROVED:",
+  data.approved,
+  "SHOWN:",
+  data.shown
+);
+
       /* =========================
          SOM PAGAMENTO
       ========================= */
