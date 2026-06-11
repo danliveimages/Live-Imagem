@@ -163,6 +163,8 @@ function triggerStreamerBotAction(actionName){
 
 }
 
+const animatedCards = new Set();
+
 /* =========================
    REALTIME
 ========================= */
@@ -257,15 +259,23 @@ await updateDoc(
     ========================= */
 
     const card =
-      document.createElement("div");
+  document.createElement("div");
 
-    card.className = "card";
+card.className = "card";
 
 if(
   !data.approved &&
-  !data.rejected
+  !data.rejected &&
+  !animatedCards.has(docSnap.id)
 ){
-  card.classList.add("cardEntering");
+
+  card.classList.add(
+    "cardEntering"
+  );
+
+  animatedCards.add(
+    docSnap.id
+  );
 }
 
 card.dataset.id = docSnap.id;
