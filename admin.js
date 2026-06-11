@@ -180,6 +180,7 @@ onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
 
     if(
+  change.type === "added" ||
   change.type === "modified"
 ){
 
@@ -191,9 +192,10 @@ onSnapshot(q, (snapshot) => {
       ========================= */
 
       if(
-        data.paymentConfirmed === true &&
-        !paymentAlertsTriggered.has(change.doc.id)
-      ){
+  data.paymentConfirmed === true &&
+  data.paymentAlertSent !== true &&
+  !paymentAlertsTriggered.has(change.doc.id)
+){
 
         paymentAlertsTriggered.add(
           change.doc.id
@@ -202,6 +204,13 @@ onSnapshot(q, (snapshot) => {
         triggerStreamerBotAction(
           "Pay Live Imagem"
         );
+
+await updateDoc(
+  doc(db, "submissions", change.doc.id),
+  {
+    paymentAlertSent: true
+  }
+);
 
       }
 
