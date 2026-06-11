@@ -963,23 +963,20 @@ box-shadow:
   width:4px;
 }
 
-.dateFilterScroll::-webkit-scrollbar{
+.dateFilterScroll::-webkit-scrollbar-track{
 
   background:transparent;
 }
 
-.dateFilterScroll::-webkit-scrollbar{
+.dateFilterScroll::-webkit-scrollbar-thumb{
 
   background:
-  rgba(255,255,255,.12);
+    rgba(255,255,255,.12);
 
   border-radius:999px;
-
-border:1px solid transparent;
-
 }
 
-.dateFilterScroll::-webkit-scrollbar{
+.dateFilterScroll::-webkit-scrollbar-thumb:hover{
 
   background:
     rgba(255,255,255,.28);
