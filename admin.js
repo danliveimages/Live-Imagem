@@ -408,7 +408,7 @@ window.approve = async function(id){
 
     await new Promise(
   resolve =>
-    setTimeout(resolve, 700)
+    setTimeout(resolve, 50)
 );
   }
 
