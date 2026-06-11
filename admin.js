@@ -263,10 +263,6 @@ await updateDoc(
 
 card.className = "card";
 
-card.classList.add(
-  "cardRefresh"
-);
-
 if(
   !data.approved &&
   !data.rejected &&
