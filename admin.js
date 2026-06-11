@@ -205,6 +205,14 @@ if(
       const data =
         change.doc.data();
 
+if(
+  change.type === "modified" &&
+  data.approved === true &&
+  data.shown === true
+){
+  return;
+}
+
 console.log(
   "DOC:",
   change.doc.id,
