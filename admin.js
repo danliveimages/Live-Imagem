@@ -51,8 +51,6 @@ const historyBtn =
 const paymentAlertsTriggered =
   new Set();
 
-const ignoredSnapshots =
-  new Set();
 
 /* =========================
    ABA INICIAL
@@ -177,6 +175,23 @@ console.log(
   Date.now()
 );
 
+const onlyShownUpdate =
+
+  snapshot.docChanges().length === 1 &&
+
+  snapshot.docChanges()[0].type === "modified" &&
+
+  snapshot.docChanges()[0].doc.data().shown === true;
+
+if(onlyShownUpdate){
+
+  console.log(
+    "IGNORANDO UPDATE SHOWN"
+  );
+
+  return;
+}
+
   list.innerHTML = "";
 
   historyList.innerHTML = "";
@@ -187,16 +202,6 @@ console.log(
 
   snapshot.docChanges().forEach(async (change) => {
 
-if(
-  ignoredSnapshots.has(change.doc.id)
-){
-  ignoredSnapshots.delete(
-    change.doc.id
-  );
-
-  return;
-}
-
     if(
   change.type === "added" ||
   change.type === "modified"
@@ -204,14 +209,6 @@ if(
 
       const data =
         change.doc.data();
-
-if(
-  change.type === "modified" &&
-  data.approved === true &&
-  data.shown === true
-){
-  return;
-}
 
 console.log(
   "DOC:",
@@ -240,9 +237,6 @@ console.log(
           "Pay Live Imagem"
         );
 
-ignoredSnapshots.add(
-  change.doc.id
-);
 
 await updateDoc(
   doc(db, "submissions", change.doc.id),
