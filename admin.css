@@ -668,3 +668,31 @@ body{
       scale(.92);
   }
 }
+
+.cardRefresh{
+
+  animation:
+    cardRefresh .45s ease;
+}
+
+@keyframes cardRefresh{
+
+  from{
+
+    opacity:.7;
+
+    transform:
+      scale(.98);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+      scale(1);
+
+  }
+
+}
