@@ -760,7 +760,7 @@ body{
 
 #clearHistoryBtn{
 
-  height:62px;
+  height:60px;
 
   padding:0 30px;
 
@@ -782,7 +782,8 @@ body{
     2px solid #ef4444;
 
   box-shadow:
-    0 0 25px rgba(239,68,68,.20);
+  inset 0 0 18px rgba(239,68,68,.08),
+  0 0 20px rgba(239,68,68,.18);
 
   display:flex;
 
@@ -799,7 +800,8 @@ body{
     translateY(-3px);
 
   box-shadow:
-    0 0 35px rgba(239,68,68,.35);
+    inset 0 0 28px rgba(239,68,68,.15),
+    0 0 35px rgba(239,68,68,.30);
 
   border-color:#ff6666;
 }
