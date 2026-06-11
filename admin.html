@@ -89,21 +89,54 @@ if(!senha || senha.trim() !== "222600"){
   </div>
 
   <!-- MAIN -->
-  <div class="mainContent">
+<div class="mainContent">
 
-    <!-- FILA -->
-    <div
-      id="list"
-      class="contentSection activeSection"
-    ></div>
+  <!-- CONTROLES -->
+  <div class="topControls">
 
-    <!-- HISTÓRICO -->
-    <div
-      id="historyList"
-      class="contentSection"
-    ></div>
+    <!-- FILTRO -->
+    <div class="dateFilter">
+
+      <button id="dateFilterBtn">
+
+        <span id="selectedDate">
+          Todos
+        </span>
+
+        <span>
+          ▼
+        </span>
+
+      </button>
+
+      <div id="dateDropdown">
+
+      </div>
+
+    </div>
+
+    <!-- LIMPAR HISTÓRICO -->
+    <button id="clearHistoryBtn">
+
+      Limpar Histórico
+
+    </button>
 
   </div>
+
+  <!-- FILA -->
+  <div
+    id="list"
+    class="contentSection activeSection"
+  ></div>
+
+  <!-- HISTÓRICO -->
+  <div
+    id="historyList"
+    class="contentSection"
+  ></div>
+
+</div>
 
 </div>
 
