@@ -51,6 +51,9 @@ const historyBtn =
 const paymentAlertsTriggered =
   new Set();
 
+const ignoredSnapshots =
+  new Set();
+
 /* =========================
    ABA INICIAL
 ========================= */
@@ -184,6 +187,16 @@ console.log(
 
   snapshot.docChanges().forEach(async (change) => {
 
+if(
+  ignoredSnapshots.has(change.doc.id)
+){
+  ignoredSnapshots.delete(
+    change.doc.id
+  );
+
+  return;
+}
+
     if(
   change.type === "added" ||
   change.type === "modified"
@@ -209,6 +222,10 @@ console.log(
         triggerStreamerBotAction(
           "Pay Live Imagem"
         );
+
+ignoredSnapshots.add(
+  change.doc.id
+);
 
 await updateDoc(
   doc(db, "submissions", change.doc.id),
