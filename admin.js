@@ -169,7 +169,10 @@ function triggerStreamerBotAction(actionName){
 
 onSnapshot(q, (snapshot) => {
 
-console.log("SNAPSHOT");
+console.log(
+  "SNAPSHOT",
+  Date.now()
+);
 
   list.innerHTML = "";
 
