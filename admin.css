@@ -624,7 +624,7 @@ body{
 .cardEntering{
 
   animation:
-    cardEnter .7s ease;
+    cardEnter .9s ease;
 }
 
 .card.removing{
@@ -632,7 +632,7 @@ body{
   pointer-events:none;
 
   animation:
-    cardExit .6s ease forwards;
+    cardExit .7s ease forwards;
 }
 
 @keyframes cardEnter{

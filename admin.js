@@ -163,8 +163,6 @@ function triggerStreamerBotAction(actionName){
 
 }
 
-const animatedCards = new Set();
-
 /* =========================
    REALTIME
 ========================= */
@@ -263,18 +261,9 @@ await updateDoc(
 
 card.className = "card";
 
-if(
-  !animatedCards.has(docSnap.id)
-){
-
-  card.classList.add(
-    "cardEntering"
-  );
-
-  animatedCards.add(
-    docSnap.id
-  );
-}
+card.classList.add(
+  "cardEntering"
+);
 
 card.dataset.id = docSnap.id;
 
@@ -382,7 +371,7 @@ window.approve = async function(id){
 
     await new Promise(
   resolve =>
-    setTimeout(resolve, 600)
+    setTimeout(resolve, 700)
 );
   }
 
@@ -440,7 +429,7 @@ window.reject = async function(id){
 
     await new Promise(
       resolve =>
-        setTimeout(resolve, 350)
+        setTimeout(resolve, 700)
     );
   }
 
