@@ -260,6 +260,14 @@ await updateDoc(
       document.createElement("div");
 
     card.className = "card";
+
+if(
+  !data.approved &&
+  !data.rejected
+){
+  card.classList.add("cardEntering");
+}
+
 card.dataset.id = docSnap.id;
 
     card.innerHTML = `
@@ -366,7 +374,7 @@ window.approve = async function(id){
 
     await new Promise(
   resolve =>
-    setTimeout(resolve, 200)
+    setTimeout(resolve, 300)
 );
   }
 

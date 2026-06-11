@@ -619,7 +619,12 @@ body{
 ========================= */
 
 .card{
-  animation:cardEnter .4s ease;
+}
+
+.cardEntering{
+
+  animation:
+    cardEnter .4s ease;
 }
 
 .card.removing{
