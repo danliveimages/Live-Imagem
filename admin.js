@@ -7,6 +7,7 @@ import {
   orderBy,
   onSnapshot,
   updateDoc,
+  deleteDoc,
   doc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -275,18 +276,31 @@ card.dataset.id = docSnap.id;
 
         <div class="actions">
 
-          <button onclick="approve('${docSnap.id}')">
-            Aprovar
-          </button>
+  ${
+    !data.approved && !data.rejected
+    ? `
+      <button onclick="approve('${docSnap.id}')">
+        Aprovar
+      </button>
 
-          <button
-            class="rejectBtn"
-            onclick="reject('${docSnap.id}')"
-          >
-            Recusar
-          </button>
+      <button
+        class="rejectBtn"
+        onclick="reject('${docSnap.id}')"
+      >
+        Recusar
+      </button>
+    `
+    : `
+      <button
+        class="rejectBtn"
+        onclick="deleteSubmission('${docSnap.id}')"
+      >
+        Excluir
+      </button>
+    `
+  }
 
-        </div>
+</div>
 
       </div>
 
@@ -424,6 +438,44 @@ window.reject = async function(id){
     console.error(err);
 
     alert("Erro ao recusar");
+
+  }
+
+};
+
+/* =========================
+   EXCLUIR
+========================= */
+
+window.deleteSubmission = async function(id){
+
+  if(
+    !confirm(
+      "Deseja realmente excluir este item?"
+    )
+  ){
+    return;
+  }
+
+  try{
+
+    await deleteDoc(
+      doc(db, "submissions", id)
+    );
+
+    console.log(
+      "Item excluído"
+    );
+
+  }
+
+  catch(err){
+
+    console.error(err);
+
+    alert(
+      "Erro ao excluir"
+    );
 
   }
 
