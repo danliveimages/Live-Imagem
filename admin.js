@@ -169,6 +169,8 @@ function triggerStreamerBotAction(actionName){
 
 onSnapshot(q, (snapshot) => {
 
+console.log("SNAPSHOT");
+
   list.innerHTML = "";
 
   historyList.innerHTML = "";
