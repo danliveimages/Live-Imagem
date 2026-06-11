@@ -249,6 +249,7 @@ onSnapshot(q, (snapshot) => {
       document.createElement("div");
 
     card.className = "card";
+card.dataset.id = docSnap.id;
 
     card.innerHTML = `
 
@@ -324,6 +325,23 @@ onSnapshot(q, (snapshot) => {
 
 window.approve = async function(id){
 
+  const card =
+    document.querySelector(
+      `[data-id="${id}"]`
+    );
+
+  if(card){
+
+    card.classList.add(
+      "removing"
+    );
+
+    await new Promise(
+      resolve =>
+        setTimeout(resolve, 350)
+    );
+  }
+
   try {
 
     await updateDoc(
@@ -341,6 +359,22 @@ window.approve = async function(id){
     console.log(
       "Imagem aprovada"
     );
+
+    triggerStreamerBotAction(
+      "Live Images"
+    );
+
+  }
+
+  catch(err){
+
+    console.error(err);
+
+    alert("Erro ao aprovar");
+
+  }
+
+};
 
     /* =========================
        STREAMER.BOT
@@ -367,6 +401,23 @@ window.approve = async function(id){
 ========================= */
 
 window.reject = async function(id){
+
+  const card =
+    document.querySelector(
+      `[data-id="${id}"]`
+    );
+
+  if(card){
+
+    card.classList.add(
+      "removing"
+    );
+
+    await new Promise(
+      resolve =>
+        setTimeout(resolve, 350)
+    );
+  }
 
   try {
 

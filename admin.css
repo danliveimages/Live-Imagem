@@ -613,3 +613,53 @@ body{
     0 0 45px rgba(59,130,246,.45),
     inset 0 0 18px rgba(59,130,246,.15);
 }
+
+/* =========================
+   ANIMAÇÕES DOS CARDS
+========================= */
+
+.card{
+  animation:cardEnter .4s ease;
+}
+
+.card.removing{
+
+  pointer-events:none;
+
+  animation:
+    cardExit .35s ease forwards;
+}
+
+@keyframes cardEnter{
+
+  from{
+    opacity:0;
+    transform:
+      translateY(20px)
+      scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes cardExit{
+
+  from{
+    opacity:1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  to{
+    opacity:0;
+    transform:
+      translateY(-20px)
+      scale(.92);
+  }
+}
