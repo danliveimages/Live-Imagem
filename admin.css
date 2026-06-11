@@ -944,3 +944,31 @@ box-shadow:
   background:
     rgba(255,255,255,.06);
 }
+
+/* =========================
+   SCROLL FILTRO
+========================= */
+
+.dateFilterMenu::-webkit-scrollbar{
+
+  width:6px;
+}
+
+.dateFilterMenu::-webkit-scrollbar-track{
+
+  background:transparent;
+}
+
+.dateFilterMenu::-webkit-scrollbar-thumb{
+
+  background:
+  rgba(255,255,255,.12);
+
+  border-radius:999px;
+}
+
+.dateFilterMenu::-webkit-scrollbar-thumb:hover{
+
+  background:
+    rgba(255,255,255,.28);
+}
