@@ -44,6 +44,9 @@ const queueBtn =
 const historyBtn =
   document.getElementById("historyBtn");
 
+const clearHistoryBtn =
+  document.getElementById("clearHistoryBtn");
+
 /* =========================
    CONTROLE ALERTA
 ========================= */
@@ -60,6 +63,9 @@ list.classList.add("activeSection");
 
 queueBtn.classList.add("activeTab");
 
+clearHistoryBtn.style.display =
+  "none";
+
 /* =========================
    TROCA DE TELAS
 ========================= */
@@ -74,6 +80,9 @@ queueBtn.addEventListener("click", () => {
 
   historyBtn.classList.remove("activeTab");
 
+clearHistoryBtn.style.display =
+  "none";
+
 });
 
 historyBtn.addEventListener("click", () => {
@@ -85,6 +94,9 @@ historyBtn.addEventListener("click", () => {
   historyBtn.classList.add("activeTab");
 
   queueBtn.classList.remove("activeTab");
+
+clearHistoryBtn.style.display =
+  "flex";
 
 });
 
