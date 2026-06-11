@@ -748,10 +748,26 @@ body{
 #dateFilterBtn:hover{
 
   transform:
-    translateY(-3px);
+    translateY(-3px)
+    scale(1.03);
+
+  filter:
+    brightness(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(250,204,21,.30),
+      rgba(250,204,21,.08)
+    );
+
+  border:
+    2px solid #facc15;
 
   box-shadow:
-    0 20px 45px rgba(0,0,0,.45);
+    0 0 45px rgba(250,204,21,.45),
+    inset 0 0 18px rgba(250,204,21,.15),
+    0 0 70px rgba(250,204,21,.25);
 }
 
 /* =========================
@@ -762,7 +778,7 @@ body{
 
   height:62px;
 
-  padding:0 30px;
+  padding:0 24px;
 
   border-radius:22px;
 
