@@ -624,7 +624,7 @@ body{
 .cardEntering{
 
   animation:
-    cardEnter .9s ease;
+    cardEnter .7s ease;
 }
 
 .card.removing{
