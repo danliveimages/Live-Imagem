@@ -261,10 +261,6 @@ await updateDoc(
 
 card.className = "card";
 
-card.classList.add(
-  "cardEntering"
-);
-
 card.dataset.id = docSnap.id;
 
     card.innerHTML = `
@@ -330,13 +326,21 @@ card.dataset.id = docSnap.id;
     ========================= */
 
     if(
-      !data.approved &&
-      !data.rejected
-    ){
+  !data.approved &&
+  !data.rejected
+){
 
-      list.appendChild(card);
+  list.appendChild(card);
 
-    }
+  requestAnimationFrame(() => {
+
+    card.classList.add(
+      "cardEntering"
+    );
+
+  });
+
+}
 
     /* =========================
        HISTÓRICO
@@ -345,6 +349,14 @@ card.dataset.id = docSnap.id;
     else {
 
       historyList.prepend(card);
+
+requestAnimationFrame(() => {
+
+  card.classList.add(
+    "cardEntering"
+  );
+
+});
 
     }
 
