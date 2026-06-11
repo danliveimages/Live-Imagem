@@ -776,14 +776,16 @@ body{
 
   font-family:'Poppins',sans-serif;
 
-  background:transparent;
+  background:
+linear-gradient(
+  135deg,
+  rgba(239,68,68,.06),
+  rgba(239,68,68,.02)
+);
 
-  border:
-    2px solid #ef4444;
-
-  box-shadow:
-  inset 0 0 18px rgba(239,68,68,.08),
-  0 0 20px rgba(239,68,68,.18);
+box-shadow:
+0 0 15px rgba(239,68,68,.12),
+inset 0 0 6px rgba(239,68,68,.05);
 
   display:flex;
 
@@ -797,11 +799,24 @@ body{
 #clearHistoryBtn:hover{
 
   transform:
-    translateY(-3px);
+    translateY(-3px)
+    scale(1.03);
+
+  filter:
+    brightness(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,68,68,.30),
+      rgba(239,68,68,.08)
+    );
+
+  border:
+    2px solid #ef4444;
 
   box-shadow:
-    inset 0 0 28px rgba(239,68,68,.15),
-    0 0 35px rgba(239,68,68,.30);
-
-  border-color:#ff6666;
+  0 0 45px rgba(239,68,68,.45),
+  inset 0 0 18px rgba(239,68,68,.15),
+  0 0 70px rgba(239,68,68,.25);
 }
