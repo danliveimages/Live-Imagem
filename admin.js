@@ -47,6 +47,15 @@ const historyBtn =
 const clearHistoryBtn =
   document.getElementById("clearHistoryBtn");
 
+const dateFilterBtn =
+  document.getElementById("dateFilterBtn");
+
+const dateFilterMenu =
+  document.getElementById("dateFilterMenu");
+
+const selectedDate =
+  document.getElementById("selectedDate");
+
 /* =========================
    CONTROLE ALERTA
 ========================= */
@@ -65,6 +74,24 @@ queueBtn.classList.add("activeTab");
 
 clearHistoryBtn.style.display =
   "none";
+
+/* =========================
+   FILTRO DATA
+========================= */
+
+dateFilterBtn.addEventListener("click", (e) => {
+
+  e.stopPropagation();
+
+  dateFilterMenu.classList.toggle("open");
+
+});
+
+document.addEventListener("click", () => {
+
+  dateFilterMenu.classList.remove("open");
+
+});
 
 /* =========================
    TROCA DE TELAS

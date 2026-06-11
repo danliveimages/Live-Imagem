@@ -880,3 +880,67 @@ box-shadow:
   inset 0 0 18px rgba(239,68,68,.15),
   0 0 70px rgba(239,68,68,.25);
 }
+
+/* =========================
+   MENU FILTRO DATA
+========================= */
+
+.dateFilterMenu{
+
+  position:absolute;
+
+  top:72px;
+
+  left:0;
+
+  width:220px;
+
+  max-height:240px;
+
+  overflow-y:auto;
+
+  display:none;
+
+  z-index:9999;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,19,35,.98),
+      rgba(9,14,28,.98)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  border-radius:22px;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.40);
+}
+
+.dateFilterMenu.open{
+
+  display:block;
+}
+
+.dateOption{
+
+  padding:16px 20px;
+
+  color:white;
+
+  cursor:pointer;
+
+  font-size:18px;
+
+  font-family:'Poppins',sans-serif;
+
+  transition:.2s ease;
+}
+
+.dateOption:hover{
+
+  background:
+    rgba(255,255,255,.06);
+}
