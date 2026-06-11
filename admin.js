@@ -376,25 +376,6 @@ window.approve = async function(id){
 
 };
 
-    /* =========================
-       STREAMER.BOT
-    ========================= */
-
-    triggerStreamerBotAction(
-      "Live Images"
-    );
-
-  }
-
-  catch(err){
-
-    console.error(err);
-
-    alert("Erro ao aprovar");
-
-  }
-
-};
 
 /* =========================
    RECUSAR
