@@ -180,7 +180,6 @@ onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
 
     if(
-  change.type === "added" ||
   change.type === "modified"
 ){
 
