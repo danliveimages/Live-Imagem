@@ -953,7 +953,7 @@ padding:8px 0;
 
 .dateFilterMenu::-webkit-scrollbar{
 
-  width:6px;
+  width:4px;
 }
 
 .dateFilterMenu::-webkit-scrollbar-track{
@@ -967,6 +967,9 @@ padding:8px 0;
   rgba(255,255,255,.12);
 
   border-radius:999px;
+
+border:1px solid transparent;
+
 }
 
 .dateFilterMenu::-webkit-scrollbar-thumb:hover{
