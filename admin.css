@@ -776,16 +776,12 @@ body{
 
   font-family:'Poppins',sans-serif;
 
-  background:
-linear-gradient(
-  135deg,
-  rgba(239,68,68,.06),
-  rgba(239,68,68,.02)
-);
+  background:transparent;
 
-box-shadow:
-0 0 15px rgba(239,68,68,.12),
-inset 0 0 6px rgba(239,68,68,.05);
+  border:
+    2px solid #ef4444;
+
+  box-shadow:none;
 
   display:flex;
 
