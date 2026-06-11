@@ -960,7 +960,7 @@ box-shadow:
 
 .dateFilterScroll::-webkit-scrollbar{
 
-  width:6px;
+  width:4px;
 }
 
 .dateFilterScroll::-webkit-scrollbar-thumb{
