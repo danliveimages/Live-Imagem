@@ -899,6 +899,8 @@ box-shadow:
 
   overflow-y:auto;
 
+padding:8px 0;
+
   display:none;
 
   z-index:9999;
