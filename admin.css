@@ -760,7 +760,7 @@ body{
 
 #clearHistoryBtn{
 
-  height:60px;
+  height:62px;
 
   padding:0 30px;
 
@@ -776,12 +776,18 @@ body{
 
   font-family:'Poppins',sans-serif;
 
-  background:transparent;
+  background:
+  linear-gradient(
+    180deg,
+    rgba(14,19,35,.98),
+    rgba(9,14,28,.98)
+  );
 
   border:
-    2px solid #ef4444;
+    1px solid rgba(255,255,255,.06);
 
-  box-shadow:none;
+  box-shadow:
+  0 15px 40px rgba(0,0,0,.30);
 
   display:flex;
 
