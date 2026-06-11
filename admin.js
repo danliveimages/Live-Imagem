@@ -177,7 +177,7 @@ onSnapshot(q, (snapshot) => {
      ALTERAÇÕES REALTIME
   ========================= */
 
-  snapshot.docChanges().forEach((change) => {
+  snapshot.docChanges().forEach(async (change) => {
 
     if(
   change.type === "added" ||
