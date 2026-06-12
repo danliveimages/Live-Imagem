@@ -609,6 +609,14 @@ buildDateFilterMenu(
   historyDatesGlobal
 );
 
+if(lastSnapshot){
+
+  renderHistory(
+    lastSnapshot
+  );
+
+}
+
 });
 
 /* =========================
