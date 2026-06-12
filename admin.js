@@ -566,6 +566,11 @@ queueBtn.addEventListener("click", () => {
 clearHistoryBtn.style.display =
   "none";
 
+currentDateFilter = "all";
+
+selectedDate.textContent =
+  "Todos";
+
 buildDateFilterMenu(
   queueDatesGlobal,
   historyDatesGlobal
@@ -585,6 +590,11 @@ historyBtn.addEventListener("click", () => {
 
 clearHistoryBtn.style.display =
   "flex";
+
+currentDateFilter = "all";
+
+selectedDate.textContent =
+  "Todos";
 
 buildDateFilterMenu(
   queueDatesGlobal,
