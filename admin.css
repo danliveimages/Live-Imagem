@@ -951,6 +951,15 @@ will-change:
   overflow-y:auto;
 
   padding:8px 0;
+
+transition:
+  opacity .25s ease;
+}
+
+.dateFilterMenu:not(.open)
+.dateFilterScroll{
+
+  opacity:0;
 }
 
 .dateOption{
