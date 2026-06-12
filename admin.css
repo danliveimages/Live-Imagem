@@ -909,8 +909,8 @@ transform:
   translateY(-10px);
 
 transition:
-  opacity .25s ease,
-  transform .25s ease;
+  opacity .35s ease,
+  transform .35s ease;
 
 will-change:
   opacity,
@@ -953,7 +953,7 @@ will-change:
   padding:8px 0;
 
 transition:
-  opacity .25s ease;
+  opacity .35s ease;
 }
 
 .dateFilterMenu:not(.open)
