@@ -377,7 +377,11 @@ onSnapshot(q, (snapshot) => {
 
 lastSnapshot = snapshot;
 
-const uniqueDates = new Set();
+const queueDates =
+  new Set();
+
+const historyDates =
+  new Set();
 
 console.log(
   "SNAPSHOT",
@@ -475,16 +479,32 @@ snapshot.forEach((docSnap) => {
 
     if(data.createdAt){
 
-      const date =
-        data.createdAt.toDate();
+  const date =
+    data.createdAt.toDate();
 
-      const formattedDate =
-        date.toLocaleDateString("pt-BR");
+  const formattedDate =
+    date.toLocaleDateString("pt-BR");
 
-      uniqueDates.add(
-        formattedDate
-      );
-    }
+  if(
+    !data.approved &&
+    !data.rejected
+  ){
+
+    queueDates.add(
+      formattedDate
+    );
+
+  }
+
+  else{
+
+    historyDates.add(
+      formattedDate
+    );
+
+  }
+
+}
 
     /* =========================
    DATA SEGURA
@@ -717,7 +737,17 @@ yesterdayDate.setDate(
 const yesterday =
   yesterdayDate.toLocaleDateString("pt-BR");
 
-[...uniqueDates]
+const activeDates =
+
+  historyBtn.classList.contains(
+    "activeTab"
+  )
+
+    ? historyDates
+
+    : queueDates;
+
+[...activeDates]
   .reverse()
   .forEach(date => {
 
