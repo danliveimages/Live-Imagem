@@ -515,6 +515,26 @@ const yesterday =
 
   });
 
+document
+  .querySelectorAll(".dateOption")
+  .forEach(option => {
+
+    option.onclick = () => {
+
+      currentDateFilter =
+        option.dataset.value;
+
+      selectedDate.textContent =
+        option.textContent.trim();
+
+      dateFilterMenu.classList.remove(
+        "open"
+      );
+
+    };
+
+  });
+
 });
 
 /* =========================
