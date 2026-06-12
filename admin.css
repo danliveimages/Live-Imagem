@@ -912,6 +912,10 @@ transition:
   opacity .25s ease,
   transform .25s ease;
 
+will-change:
+  opacity,
+  transform;
+
   z-index:9999;
 
   background:
