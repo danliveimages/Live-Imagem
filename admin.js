@@ -566,6 +566,11 @@ queueBtn.addEventListener("click", () => {
 clearHistoryBtn.style.display =
   "none";
 
+buildDateFilterMenu(
+  queueDatesGlobal,
+  historyDatesGlobal
+);
+
 });
 
 historyBtn.addEventListener("click", () => {
@@ -580,6 +585,11 @@ historyBtn.addEventListener("click", () => {
 
 clearHistoryBtn.style.display =
   "flex";
+
+buildDateFilterMenu(
+  queueDatesGlobal,
+  historyDatesGlobal
+);
 
 });
 
