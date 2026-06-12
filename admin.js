@@ -602,22 +602,22 @@ document
     "open"
   );
 
-  console.log(
+  console.log("CLIQUE OK");
+
+console.log(
   "FILTRO:",
   currentDateFilter
 );
 
 console.log(
-  lastSnapshot
+  "SNAPSHOT EXISTE?",
+  !!lastSnapshot
 );
 
-historyList.innerHTML = "";
-
-if(lastSnapshot){
-
-  console.log(
-    "RENDERIZAR NOVAMENTE"
-  );
+alert(
+  "Filtro: " +
+  currentDateFilter
+);
 
 }
 
