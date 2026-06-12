@@ -480,20 +480,40 @@ requestAnimationFrame(() => {
   </div>
 `;
 
-  [...uniqueDates]
-    .reverse()
-    .forEach(date => {
+  const today =
+  new Date().toLocaleDateString("pt-BR");
 
-      dateFilterScroll.innerHTML += `
-        <div
-          class="dateOption"
-          data-value="${date}"
-        >
-          ${date}
-        </div>
-      `;
+const yesterdayDate =
+  new Date();
 
-    });
+yesterdayDate.setDate(
+  yesterdayDate.getDate() - 1
+);
+
+const yesterday =
+  yesterdayDate.toLocaleDateString("pt-BR");
+
+[...uniqueDates]
+  .reverse()
+  .forEach(date => {
+
+    if(
+      date === today ||
+      date === yesterday
+    ){
+      return;
+    }
+
+    dateFilterScroll.innerHTML += `
+      <div
+        class="dateOption"
+        data-value="${date}"
+      >
+        ${date}
+      </div>
+    `;
+
+  });
 
 });
 
