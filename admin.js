@@ -324,28 +324,39 @@ snapshot.forEach((docSnap) => {
     }
 
     /* =========================
-       DATA SEGURA
-    ========================= */
+   DATA SEGURA
+========================= */
 
-    let formattedDate = "Sem data";
+let formattedDate = "Sem data";
 
-    if(
-      data.createdAt &&
-      typeof data.createdAt.toDate === "function"
-    ){
+if(
+  data.createdAt &&
+  typeof data.createdAt.toDate === "function"
+){
 
-      const createdAt =
-        data.createdAt.toDate();
+  const createdAt =
+    data.createdAt.toDate();
 
-      formattedDate =
+  formattedDate =
 
-        createdAt.toLocaleDateString("pt-BR") +
+    createdAt.toLocaleDateString("pt-BR") +
 
-        " • " +
+    " • " +
 
-        createdAt.toLocaleTimeString("pt-BR");
+    createdAt.toLocaleTimeString("pt-BR");
 
-    }
+}
+
+const cardDate =
+
+  data.createdAt &&
+  typeof data.createdAt.toDate === "function"
+
+    ? data.createdAt
+        .toDate()
+        .toLocaleDateString("pt-BR")
+
+    : null;
 
     /* =========================
        CARD
@@ -443,17 +454,67 @@ card.dataset.id = docSnap.id;
 
     else {
 
-      historyList.prepend(card);
+  let showCard = false;
 
-requestAnimationFrame(() => {
+  const today =
+    new Date().toLocaleDateString("pt-BR");
 
-  card.classList.add(
-    "cardEntering"
+  const yesterdayDate =
+    new Date();
+
+  yesterdayDate.setDate(
+    yesterdayDate.getDate() - 1
   );
 
-});
+  const yesterday =
+    yesterdayDate.toLocaleDateString("pt-BR");
 
-    }
+  if(currentDateFilter === "all"){
+
+    showCard = true;
+
+  }
+
+  else if(
+    currentDateFilter === "today"
+  ){
+
+    showCard =
+      cardDate === today;
+
+  }
+
+  else if(
+    currentDateFilter === "yesterday"
+  ){
+
+    showCard =
+      cardDate === yesterday;
+
+  }
+
+  else{
+
+    showCard =
+      cardDate === currentDateFilter;
+
+  }
+
+  if(showCard){
+
+    historyList.prepend(card);
+
+    requestAnimationFrame(() => {
+
+      card.classList.add(
+        "cardEntering"
+      );
+
+    });
+
+  }
+
+}
 
     });
 
@@ -521,21 +582,37 @@ document
 
     option.onclick = () => {
 
-      currentDateFilter =
-        option.dataset.value;
+  currentDateFilter =
+    option.dataset.value;
 
-      selectedDate.textContent =
-        option.textContent.trim();
+  selectedDate.textContent =
+    option.textContent.trim();
 
-      dateFilterMenu.classList.remove(
-        "open"
-      );
+  dateFilterMenu.classList.remove(
+    "open"
+  );
 
-    };
+  const event =
+    new Event("filterChanged");
+
+  document.dispatchEvent(
+    event
+  );
+
+};
 
   });
 
 });
+
+document.addEventListener(
+  "filterChanged",
+  () => {
+
+    historyList.innerHTML = "";
+
+  }
+);
 
 /* =========================
    APROVAR
