@@ -592,36 +592,34 @@ document
 
     option.onclick = () => {
 
-  currentDateFilter =
-    option.dataset.value;
+      currentDateFilter =
+        option.dataset.value;
 
-  selectedDate.textContent =
-    option.textContent.trim();
+      selectedDate.textContent =
+        option.textContent.trim();
 
-  dateFilterMenu.classList.remove(
-    "open"
-  );
+      dateFilterMenu.classList.remove(
+        "open"
+      );
 
-  console.log("CLIQUE OK");
+      console.log("CLIQUE OK");
 
-console.log(
-  "FILTRO:",
-  currentDateFilter
-);
+      console.log(
+        "FILTRO:",
+        currentDateFilter
+      );
 
-console.log(
-  "SNAPSHOT EXISTE?",
-  !!lastSnapshot
-);
+      console.log(
+        "SNAPSHOT EXISTE?",
+        !!lastSnapshot
+      );
 
-alert(
-  "Filtro: " +
-  currentDateFilter
-);
+      alert(
+        "Filtro: " +
+        currentDateFilter
+      );
 
-}
-
-};
+    };
 
   });
 
