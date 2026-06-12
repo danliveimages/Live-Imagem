@@ -61,6 +61,14 @@ const dateFilterScroll =
 
 let currentDateFilter = "all";
 
+function renderHistory(){
+
+  historyList.innerHTML = "";
+
+}
+
+let lastSnapshot = null;
+
 /* =========================
    CONTROLE ALERTA
 ========================= */
@@ -214,7 +222,7 @@ function triggerStreamerBotAction(actionName){
 
 onSnapshot(q, (snapshot) => {
 
-window.lastSnapshot = snapshot;
+lastSnapshot = snapshot;
 
 const uniqueDates = new Set();
 
@@ -595,13 +603,23 @@ document
   );
 
   console.log(
-    "FILTRO:",
-    currentDateFilter
-  );
+  "FILTRO:",
+  currentDateFilter
+);
+
+console.log(
+  lastSnapshot
+);
+
+historyList.innerHTML = "";
+
+if(lastSnapshot){
 
   console.log(
-    window.lastSnapshot
+    "RENDERIZAR NOVAMENTE"
   );
+
+}
 
 };
 
