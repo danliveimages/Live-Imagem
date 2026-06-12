@@ -61,6 +61,135 @@ const dateFilterScroll =
 
 let currentDateFilter = "all";
 
+function buildDateFilterMenu(
+  queueDates,
+  historyDates
+){
+
+  dateFilterScroll.innerHTML = `
+    <div
+      class="dateOption"
+      data-value="all"
+    >
+      Todos
+    </div>
+
+    <div
+      class="dateOption"
+      data-value="today"
+    >
+      Hoje
+    </div>
+
+    <div
+      class="dateOption"
+      data-value="yesterday"
+    >
+      Ontem
+    </div>
+  `;
+
+  const today =
+    new Date().toLocaleDateString(
+      "pt-BR"
+    );
+
+  const yesterdayDate =
+    new Date();
+
+  yesterdayDate.setDate(
+    yesterdayDate.getDate() - 1
+  );
+
+  const yesterday =
+    yesterdayDate.toLocaleDateString(
+      "pt-BR"
+    );
+
+  const activeDates =
+
+    historyBtn.classList.contains(
+      "activeTab"
+    )
+
+      ? historyDates
+
+      : queueDates;
+
+  [...activeDates]
+    .reverse()
+    .forEach(date => {
+
+      if(
+        date === today ||
+        date === yesterday
+      ){
+        return;
+      }
+
+      dateFilterScroll.innerHTML += `
+        <div
+          class="dateOption"
+          data-value="${date}"
+        >
+          ${date}
+        </div>
+      `;
+
+    });
+
+  document
+    .querySelectorAll(".dateOption")
+    .forEach(option => {
+
+      option.onclick = () => {
+
+        currentDateFilter =
+          option.dataset.value;
+
+        selectedDate.textContent =
+          option.textContent.trim();
+
+        dateFilterMenu.classList.remove(
+          "open"
+        );
+
+        if(lastSnapshot){
+
+          if(
+            historyBtn.classList.contains(
+              "activeTab"
+            )
+          ){
+
+            renderHistory(
+              lastSnapshot
+            );
+
+          }
+
+          else{
+
+            renderQueue(
+              lastSnapshot
+            );
+
+          }
+
+        }
+
+      };
+
+    });
+
+}
+
+let queueDatesGlobal =
+  new Set();
+
+let historyDatesGlobal =
+  new Set();
+
 function renderHistory(snapshot){
 
   historyList.innerHTML = "";
@@ -1028,6 +1157,17 @@ document
 };
 
   });
+
+queueDatesGlobal =
+  queueDates;
+
+historyDatesGlobal =
+  historyDates;
+
+buildDateFilterMenu(
+  queueDatesGlobal,
+  historyDatesGlobal
+);
 
 });
 
