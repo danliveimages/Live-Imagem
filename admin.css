@@ -897,6 +897,8 @@ box-shadow:
 
   max-height:240px;
 
+padding:10px 0;
+
   overflow:hidden;
 
   display:none;
@@ -926,7 +928,7 @@ box-shadow:
 
 .dateFilterScroll{
 
-  max-height:160px;
+  max-height:140px;
 
   overflow-y:auto;
 
