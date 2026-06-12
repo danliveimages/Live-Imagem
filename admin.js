@@ -222,6 +222,167 @@ function renderHistory(snapshot){
 
 let lastSnapshot = null;
 
+function renderQueue(snapshot){
+
+  list.innerHTML = "";
+
+  snapshot.forEach((docSnap) => {
+
+    const data =
+      docSnap.data();
+
+    if(
+      data.approved ||
+      data.rejected
+    ){
+      return;
+    }
+
+    const cardDate =
+
+      data.createdAt &&
+      typeof data.createdAt.toDate === "function"
+
+        ? data.createdAt
+            .toDate()
+            .toLocaleDateString("pt-BR")
+
+        : null;
+
+    let showCard = false;
+
+    const today =
+      new Date().toLocaleDateString("pt-BR");
+
+    const yesterdayDate =
+      new Date();
+
+    yesterdayDate.setDate(
+      yesterdayDate.getDate() - 1
+    );
+
+    const yesterday =
+      yesterdayDate.toLocaleDateString("pt-BR");
+
+    if(currentDateFilter === "all"){
+
+      showCard = true;
+
+    }
+
+    else if(
+      currentDateFilter === "today"
+    ){
+
+      showCard =
+        cardDate === today;
+
+    }
+
+    else if(
+      currentDateFilter === "yesterday"
+    ){
+
+      showCard =
+        cardDate === yesterday;
+
+    }
+
+    else{
+
+      showCard =
+        cardDate === currentDateFilter;
+
+    }
+
+    if(showCard){
+
+      let formattedDate =
+        "Sem data";
+
+      if(
+        data.createdAt &&
+        typeof data.createdAt.toDate === "function"
+      ){
+
+        const createdAt =
+          data.createdAt.toDate();
+
+        formattedDate =
+
+          createdAt.toLocaleDateString("pt-BR") +
+
+          " • " +
+
+          createdAt.toLocaleTimeString("pt-BR");
+
+      }
+
+      const card =
+        document.createElement("div");
+
+      card.className = "card";
+
+      card.dataset.id =
+        docSnap.id;
+
+      card.innerHTML = `
+
+        <img src="${data.imageUrl}">
+
+        <div class="cardContent">
+
+          <div class="cardTop">
+
+            <h3>
+              ${data.nickname || "Sem nickname"}
+            </h3>
+
+            <span class="date">
+              ${formattedDate}
+            </span>
+
+          </div>
+
+          <p>
+            ${data.message || ""}
+          </p>
+
+          <div class="actions">
+
+            <button onclick="approve('${docSnap.id}')">
+              Aprovar
+            </button>
+
+            <button
+              class="rejectBtn"
+              onclick="reject('${docSnap.id}')"
+            >
+              Recusar
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+      list.appendChild(card);
+
+      requestAnimationFrame(() => {
+
+        card.classList.add(
+          "cardEntering"
+        );
+
+      });
+
+    }
+
+  });
+
+}
+
 /* =========================
    CONTROLE ALERTA
 ========================= */
@@ -856,7 +1017,9 @@ document
 
   else{
 
-    location.reload();
+    renderQueue(
+      lastSnapshot
+    );
 
   }
 
