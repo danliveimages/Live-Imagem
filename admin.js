@@ -576,6 +576,14 @@ buildDateFilterMenu(
   historyDatesGlobal
 );
 
+if(lastSnapshot){
+
+  renderQueue(
+    lastSnapshot
+  );
+
+}
+
 });
 
 historyBtn.addEventListener("click", () => {
