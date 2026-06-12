@@ -214,6 +214,8 @@ function triggerStreamerBotAction(actionName){
 
 onSnapshot(q, (snapshot) => {
 
+window.lastSnapshot = snapshot;
+
 const uniqueDates = new Set();
 
 console.log(
@@ -592,11 +594,13 @@ document
     "open"
   );
 
-  const event =
-    new Event("filterChanged");
+  console.log(
+    "FILTRO:",
+    currentDateFilter
+  );
 
-  document.dispatchEvent(
-    event
+  console.log(
+    window.lastSnapshot
   );
 
 };
@@ -605,14 +609,6 @@ document
 
 });
 
-document.addEventListener(
-  "filterChanged",
-  () => {
-
-    historyList.innerHTML = "";
-
-  }
-);
 
 /* =========================
    APROVAR
