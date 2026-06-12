@@ -61,9 +61,89 @@ const dateFilterScroll =
 
 let currentDateFilter = "all";
 
-function renderHistory(){
+function renderHistory(snapshot){
 
   historyList.innerHTML = "";
+
+  snapshot.forEach((docSnap) => {
+
+    const data =
+      docSnap.data();
+
+    if(
+      !data.approved &&
+      !data.rejected
+    ){
+      return;
+    }
+
+    const cardDate =
+
+      data.createdAt &&
+      typeof data.createdAt.toDate === "function"
+
+        ? data.createdAt
+            .toDate()
+            .toLocaleDateString("pt-BR")
+
+        : null;
+
+    let showCard = false;
+
+    const today =
+      new Date().toLocaleDateString("pt-BR");
+
+    const yesterdayDate =
+      new Date();
+
+    yesterdayDate.setDate(
+      yesterdayDate.getDate() - 1
+    );
+
+    const yesterday =
+      yesterdayDate.toLocaleDateString("pt-BR");
+
+    if(currentDateFilter === "all"){
+
+      showCard = true;
+
+    }
+
+    else if(
+      currentDateFilter === "today"
+    ){
+
+      showCard =
+        cardDate === today;
+
+    }
+
+    else if(
+      currentDateFilter === "yesterday"
+    ){
+
+      showCard =
+        cardDate === yesterday;
+
+    }
+
+    else{
+
+      showCard =
+        cardDate === currentDateFilter;
+
+    }
+
+    if(showCard){
+
+      console.log(
+        "MOSTRAR:",
+        data.nickname
+      );
+
+    }
+
+  });
 
 }
 
