@@ -689,26 +689,7 @@ document
 
   if(lastSnapshot){
 
-  historyList.innerHTML = "";
-
-  lastSnapshot.forEach((docSnap) => {
-
-    const data =
-      docSnap.data();
-
-    if(
-      data.approved ||
-      data.rejected
-    ){
-
-      console.log(
-        "CARD:",
-        data.nickname
-      );
-
-    }
-
-  });
+  renderHistory(lastSnapshot);
 
 }
 
