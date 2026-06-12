@@ -56,6 +56,11 @@ const dateFilterMenu =
 const selectedDate =
   document.getElementById("selectedDate");
 
+const dateFilterScroll =
+  document.getElementById("dateFilterScroll");
+
+let currentDateFilter = "all";
+
 /* =========================
    CONTROLE ALERTA
 ========================= */
@@ -209,6 +214,8 @@ function triggerStreamerBotAction(actionName){
 
 onSnapshot(q, (snapshot) => {
 
+const uniqueDates = new Set();
+
 console.log(
   "SNAPSHOT",
   Date.now()
@@ -302,6 +309,19 @@ console.log(
 snapshot.forEach((docSnap) => {
 
     const data = docSnap.data();
+
+    if(data.createdAt){
+
+      const date =
+        data.createdAt.toDate();
+
+      const formattedDate =
+        date.toLocaleDateString("pt-BR");
+
+      uniqueDates.add(
+        formattedDate
+      );
+    }
 
     /* =========================
        DATA SEGURA
@@ -435,7 +455,31 @@ requestAnimationFrame(() => {
 
     }
 
-  });
+    });
+
+  dateFilterScroll.innerHTML = `
+    <div
+      class="dateOption"
+      data-value="all"
+    >
+      Todos
+    </div>
+  `;
+
+  [...uniqueDates]
+    .reverse()
+    .forEach(date => {
+
+      dateFilterScroll.innerHTML += `
+        <div
+          class="dateOption"
+          data-value="${date}"
+        >
+          ${date}
+        </div>
+      `;
+
+    });
 
 });
 
