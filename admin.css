@@ -901,7 +901,16 @@ padding:17px 0;
 
   overflow:hidden;
 
-  display:none;
+  opacity:0;
+
+visibility:hidden;
+
+transform:
+  translateY(-10px);
+
+transition:
+  opacity .25s ease,
+  transform .25s ease;
 
   z-index:9999;
 
@@ -923,7 +932,12 @@ padding:17px 0;
 
 .dateFilterMenu.open{
 
-  display:block;
+  opacity:1;
+
+  visibility:visible;
+
+  transform:
+    translateY(0);
 }
 
 .dateFilterScroll{
@@ -977,4 +991,19 @@ padding:17px 0;
 
   background:
     rgba(255,255,255,.55);
+}
+
+#filterArrow{
+
+  display:inline-block;
+
+  transition:
+    transform .25s ease;
+}
+
+.dateFilterMenu.open
+~ #filterArrow{
+
+  transform:
+    rotate(180deg);
 }

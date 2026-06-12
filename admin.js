@@ -53,6 +53,9 @@ const dateFilterBtn =
 const dateFilterMenu =
   document.getElementById("dateFilterMenu");
 
+const filterArrow =
+  document.getElementById("filterArrow");
+
 const selectedDate =
   document.getElementById("selectedDate");
 
@@ -539,13 +542,30 @@ dateFilterBtn.addEventListener("click", (e) => {
 
   e.stopPropagation();
 
-  dateFilterMenu.classList.toggle("open");
+  dateFilterMenu.classList.toggle(
+    "open"
+  );
+
+  filterArrow.style.transform =
+
+    dateFilterMenu.classList.contains(
+      "open"
+    )
+
+      ? "rotate(180deg)"
+
+      : "rotate(0deg)";
 
 });
 
 document.addEventListener("click", () => {
 
-  dateFilterMenu.classList.remove("open");
+  dateFilterMenu.classList.remove(
+    "open"
+  );
+
+  filterArrow.style.transform =
+    "rotate(0deg)";
 
 });
 
