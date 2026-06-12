@@ -614,20 +614,70 @@ card.dataset.id = docSnap.id;
        FILA
     ========================= */
 
-    if(
+if(
   !data.approved &&
   !data.rejected
 ){
 
-  list.appendChild(card);
+  let showCard = false;
 
-  requestAnimationFrame(() => {
+  const today =
+    new Date().toLocaleDateString("pt-BR");
 
-    card.classList.add(
-      "cardEntering"
-    );
+  const yesterdayDate =
+    new Date();
 
-  });
+  yesterdayDate.setDate(
+    yesterdayDate.getDate() - 1
+  );
+
+  const yesterday =
+    yesterdayDate.toLocaleDateString("pt-BR");
+
+  if(currentDateFilter === "all"){
+
+    showCard = true;
+
+  }
+
+  else if(
+    currentDateFilter === "today"
+  ){
+
+    showCard =
+      cardDate === today;
+
+  }
+
+  else if(
+    currentDateFilter === "yesterday"
+  ){
+
+    showCard =
+      cardDate === yesterday;
+
+  }
+
+  else{
+
+    showCard =
+      cardDate === currentDateFilter;
+
+  }
+
+  if(showCard){
+
+    list.appendChild(card);
+
+    requestAnimationFrame(() => {
+
+      card.classList.add(
+        "cardEntering"
+      );
+
+    });
+
+  }
 
 }
 
@@ -792,7 +842,23 @@ document
 
   if(lastSnapshot){
 
-  renderHistory(lastSnapshot);
+  if(
+    historyBtn.classList.contains(
+      "activeTab"
+    )
+  ){
+
+    renderHistory(
+      lastSnapshot
+    );
+
+  }
+
+  else{
+
+    location.reload();
+
+  }
 
 }
 
