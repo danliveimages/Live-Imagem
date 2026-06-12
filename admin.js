@@ -458,13 +458,27 @@ requestAnimationFrame(() => {
     });
 
   dateFilterScroll.innerHTML = `
-    <div
-      class="dateOption"
-      data-value="all"
-    >
-      Todos
-    </div>
-  `;
+  <div
+    class="dateOption"
+    data-value="all"
+  >
+    Todos
+  </div>
+
+  <div
+    class="dateOption"
+    data-value="today"
+  >
+    Hoje
+  </div>
+
+  <div
+    class="dateOption"
+    data-value="yesterday"
+  >
+    Ontem
+  </div>
+`;
 
   [...uniqueDates]
     .reverse()
