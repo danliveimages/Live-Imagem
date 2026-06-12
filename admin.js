@@ -136,12 +136,85 @@ function renderHistory(snapshot){
 
     if(showCard){
 
-      console.log(
-        "MOSTRAR:",
-        data.nickname
-      );
+  let formattedDate = "Sem data";
 
-    }
+  if(
+    data.createdAt &&
+    typeof data.createdAt.toDate === "function"
+  ){
+
+    const createdAt =
+      data.createdAt.toDate();
+
+    formattedDate =
+
+      createdAt.toLocaleDateString("pt-BR") +
+
+      " • " +
+
+      createdAt.toLocaleTimeString("pt-BR");
+
+  }
+
+  const card =
+    document.createElement("div");
+
+  card.className = "card";
+
+  card.dataset.id = docSnap.id;
+
+  card.innerHTML = `
+
+    <img src="${data.imageUrl}">
+
+    <div class="cardContent">
+
+      <div class="cardTop">
+
+        <h3>
+          ${data.nickname || "Sem nickname"}
+        </h3>
+
+        <span class="date">
+          ${formattedDate}
+        </span>
+
+      </div>
+
+      <p>
+        ${data.message || ""}
+      </p>
+
+      <div class="actions">
+
+        <button onclick="approve('${docSnap.id}')">
+          Reaprovar
+        </button>
+
+        <button
+          class="rejectBtn"
+          onclick="deleteSubmission('${docSnap.id}')"
+        >
+          Excluir
+        </button>
+
+      </div>
+
+    </div>
+
+  `;
+
+  historyList.prepend(card);
+
+  requestAnimationFrame(() => {
+
+    card.classList.add(
+      "cardEntering"
+    );
+
+  });
+
+}
 
   });
 
