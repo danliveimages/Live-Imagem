@@ -144,6 +144,10 @@ body{
 
   font-weight:800;
 
+  word-break:break-word;
+
+  overflow-wrap:break-word;
+
   text-shadow:
     0 2px 8px rgba(0,0,0,.5);
 }
