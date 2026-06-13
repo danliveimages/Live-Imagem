@@ -941,65 +941,6 @@ button:hover {
 }
 
 /* =========================
-   MOBILE
-========================= */
-
-@media (max-width:700px){
-
-  body{
-
-    padding:14px;
-  }
-
-  .container{
-
-    max-width:100%;
-
-    min-height:840px;
-
-    padding:26px;
-  }
-
-  .progressWrapper{
-
-    margin-bottom:18px;
-  }
-
-  .title{
-
-    font-size:clamp(24px, 7vw, 38px);
-
-    margin-bottom:22px;
-
-    line-height:1.2;
-
-    white-space:nowrap;
-
-    overflow:visible;
-
-    padding-bottom:10px;
-  }
-
-  .animatedTitle{
-
-    display:inline-block;
-
-    padding-bottom:14px;
-
-    transform:translateY(2px);
-  }
-
-  .page{
-
-    top:125px;
-
-    left:26px;
-
-    width:calc(100% - 52px);
-  }
-}
-
-/* =========================
    FOTO PERFIL
 ========================= */
 
@@ -1119,4 +1060,74 @@ button:hover {
   font-size:.85rem;
 
   color:#6b7280;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:700px){
+
+  body{
+
+    padding:14px;
+  }
+
+  .container{
+
+    max-width:100%;
+
+    min-height:auto;
+
+    padding:26px;
+  }
+
+  .profileAvatar{
+
+    top:-65px;
+  }
+
+  .progressWrapper{
+
+    margin-bottom:18px;
+  }
+
+  .title{
+
+    font-size:clamp(24px, 7vw, 38px);
+
+    margin-bottom:22px;
+
+    line-height:1.2;
+
+    white-space:nowrap;
+
+    overflow:visible;
+
+    padding-bottom:10px;
+  }
+
+  .animatedTitle{
+
+    display:inline-block;
+
+    padding-bottom:14px;
+
+    transform:translateY(2px);
+  }
+
+  .page{
+
+    top:125px;
+
+    left:26px;
+
+    width:calc(100% - 52px);
+  }
+
+  .creditsCard{
+
+    max-width:100%;
+  }
+
 }
