@@ -759,6 +759,17 @@ input[type="file"] {
     rgba(34,197,94,.04);
 }
 
+.uploadLabel.fileSelected{
+
+  border:2px dashed #22c55e;
+
+  background:
+    rgba(34,197,94,.04);
+
+  box-shadow:
+    0 0 0 4px rgba(34,197,94,.08);
+}
+
 /* =========================
    ALERTA
 ========================= */

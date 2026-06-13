@@ -62,12 +62,20 @@ imageInput.addEventListener(
 
       `;
 
+uploadLabel.classList.add(
+  "fileSelected"
+);
+
     }
 
     else{
 
       uploadLabel.textContent =
         "Escolher Foto 📷";
+
+uploadLabel.classList.remove(
+  "fileSelected"
+);
 
     }
 
