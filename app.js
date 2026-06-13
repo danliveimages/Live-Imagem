@@ -103,21 +103,34 @@ continueBtn.addEventListener("click", () => {
 
   /* REMOVE ETAPA 1 */
 
-  page1.classList.remove("activePage");
+page1.classList.remove("activePage");
 
-  /* MOSTRA ETAPA 2 */
+/* MOSTRA ETAPA 2 */
 
-  setTimeout(() => {
+const container =
+  document.querySelector(
+    ".container"
+  );
 
-    page2.classList.add("activePage");
+setTimeout(() => {
 
-document.querySelector(
-  ".container"
-).style.height = "760px";
+  page2.classList.add("activePage");
 
-  }, 10);
+  if(window.innerWidth <= 700){
 
-  /* PROGRESSO */
+    container.style.height = "750px";
+
+  }
+
+  else{
+
+    container.style.height = "760px";
+
+  }
+
+}, 10);
+
+/* PROGRESSO */
 
   step2Ball.classList.add("active");
 
