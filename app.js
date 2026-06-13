@@ -113,7 +113,7 @@ continueBtn.addEventListener("click", () => {
 
 document.querySelector(
   ".container"
-).style.height = "810px";
+).style.height = "780px";
 
   }, 10);
 
