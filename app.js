@@ -93,13 +93,13 @@ continueBtn.addEventListener("click", () => {
   const image =
     document.getElementById("image").files[0];
 
-  if (!nickname || !message || !image) {
+  if (!nickname || !image) {
 
-    alert("Preencha todos os campos.");
+  alert("Preencha o nickname e escolha uma foto.");
 
-    return;
+  return;
 
-  }
+}
 
   /* REMOVE ETAPA 1 */
 
