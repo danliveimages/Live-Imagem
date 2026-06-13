@@ -1077,11 +1077,9 @@ button:hover {
 
   max-width:100%;
 
-  height:auto;
+  height:700px;
 
-  min-height:0;
-
-  padding:75px 26px 25px 26px;
+  padding:75px 26px 20px 26px;
 }
 
   .profileAvatar{
