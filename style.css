@@ -1077,18 +1077,18 @@ button:hover {
 
   max-width:100%;
 
-  height:700px;
+  height:730px;
 
   padding:75px 26px 20px 26px;
 }
 
   .profileAvatar{
 
-  top:-80px;
+  top:-55px;
 
-  width:100px;
+  width:90px;
 
-  height:100px;
+  height:90px;
 }
 
   .progressWrapper{
@@ -1122,12 +1122,12 @@ button:hover {
 
   .page{
 
-    top:125px;
+  top:175px;
 
-    left:26px;
+  left:26px;
 
-    width:calc(100% - 52px);
-  }
+  width:calc(100% - 52px);
+}
 
   .creditsCard{
 
