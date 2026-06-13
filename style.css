@@ -1068,74 +1068,53 @@ button:hover {
 
   display:flex;
 
-  justify-content:center;
+  flex-direction:column;
 
   align-items:center;
 
-  gap:10px;
+  justify-content:center;
+
+  gap:4px;
 }
 
-.creditsTitle{
+.creditsLink{
+
+  text-decoration:none;
 
   font-family:'Poppins',sans-serif;
 
-  font-weight:700;
+  font-size:1rem;
 
-  color:#111827;
+  background:linear-gradient(
+    90deg,
+    #22c55e,
+    #3b82f6,
+    #ef4444,
+    #facc15,
+    #22c55e
+  );
+
+  background-size:300% 300%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:
+    rainbowMove 8s ease infinite;
+
+  transition:.25s ease;
+}
+
+.creditsLink:hover{
+
+  transform:
+    scale(1.03);
 }
 
 .creditsAuthor{
 
+  font-size:.85rem;
+
   color:#6b7280;
-}
-
-.uploadLabel{
-
-  position:relative;
-
-  overflow:hidden;
-}
-
-.uploadSuccess{
-
-  position:absolute;
-
-  top:50%;
-
-  left:50%;
-
-  transform:
-    translate(-50%,-50%);
-
-  color:#22c55e;
-
-  font-size:1rem;
-
-  font-weight:400;
-
-  white-space:nowrap;
-}
-
-.uploadFileName{
-
-  position:absolute;
-
-  left:50%;
-
-  bottom:2px;
-
-  transform:
-    translateX(-50%);
-
-  font-size:.60rem;
-
-  color:#777;
-
-  white-space:nowrap;
-
-  overflow:hidden;
-
-  text-overflow:ellipsis;
-
-  max-width:90%;
 }
