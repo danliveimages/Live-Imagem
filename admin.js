@@ -12,6 +12,11 @@ import {
   doc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
+import {
+  getAuth,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
 /* =========================
    FIREBASE
 ========================= */
@@ -28,6 +33,23 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
+
+const auth =
+  getAuth(app);
+
+onAuthStateChanged(
+  auth,
+  (user) => {
+
+    if(!user){
+
+      window.location.href =
+        "login.html";
+
+    }
+
+  }
+);
 
 /* =========================
    ELEMENTOS
