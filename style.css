@@ -1075,17 +1075,23 @@ button:hover {
 
   .container{
 
-    max-width:100%;
+  max-width:100%;
 
-    min-height:auto;
+  height:auto;
 
-    padding:26px;
-  }
+  min-height:0;
+
+  padding:75px 26px 25px 26px;
+}
 
   .profileAvatar{
 
-    top:-65px;
-  }
+  top:-80px;
+
+  width:100px;
+
+  height:100px;
+}
 
   .progressWrapper{
 
