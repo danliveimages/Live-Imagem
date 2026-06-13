@@ -24,34 +24,6 @@
 
 <body>
 
-<script>
-
-const senha = prompt("Digite a senha admin");
-
-if(!senha || senha.trim() !== "222600"){
-
-  document.body.innerHTML = `
-    <div style="
-      width:100vw;
-      height:100vh;
-      background:#000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-family:Poppins;
-      color:white;
-      font-size:32px;
-      font-weight:700;
-    ">
-      Acesso negado
-    </div>
-  `;
-
-  throw new Error("Sem acesso");
-}
-
-</script>
-
 <div class="adminApp">
 
   <!-- SIDEBAR -->
@@ -85,6 +57,13 @@ if(!senha || senha.trim() !== "222600"){
     >
       HISTÓRICO
     </button>
+
+<button
+  id="logoutBtn"
+  class="sidebarBtn logoutBtn"
+>
+  SAIR
+</button>
 
   </div>
 
