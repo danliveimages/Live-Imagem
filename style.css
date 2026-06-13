@@ -795,6 +795,16 @@ input[type="file"] {
   font-size: 18px;
 }
 
+.paymentAlert p{
+
+  margin:0;
+}
+
+.paymentAlert p + p{
+
+  margin-top:6px;
+}
+
 /* =========================
    BOTÕES
 ========================= */
