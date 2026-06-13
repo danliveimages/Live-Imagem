@@ -722,7 +722,7 @@ input[type="file"] {
 
   display:flex;
 
-flex-direction:column;
+  flex-direction:column;
 
   align-items:center;
 
@@ -745,6 +745,8 @@ flex-direction:column;
   transition:.25s ease;
 
   font-size:1rem;
+
+  line-height:1;
 }
 
 .uploadLabel:hover {
@@ -1091,7 +1093,7 @@ button:hover {
 
   font-weight:400;
 
-  line-height:1.2;
+  line-height:1;
 }
 
 .uploadFileName{
@@ -1100,7 +1102,7 @@ button:hover {
 
   margin-top:4px;
 
-  font-size:.72rem;
+  font-size:.65rem;
 
   color:#777;
 
