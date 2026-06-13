@@ -1486,6 +1486,14 @@ logoutBtn.addEventListener(
   "click",
   async () => {
 
+    if(
+      !confirm(
+        "Deseja sair da conta?"
+      )
+    ){
+      return;
+    }
+
     try{
 
       await signOut(auth);
