@@ -398,7 +398,7 @@ margin-top:70px;
   flex-direction: column;
   align-items: center;
 
-  height: 773px;
+  height: 700px;
 
   overflow: visible;
 
@@ -802,7 +802,7 @@ input[type="file"] {
 
 .paymentAlert p + p{
 
-  margin-top:8px;
+  margin-top:10px;
 }
 
 /* =========================
