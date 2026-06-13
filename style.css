@@ -398,7 +398,7 @@ margin-top:70px;
   flex-direction: column;
   align-items: center;
 
-  min-height: 800;
+  height: 800px;
 
   overflow: visible;
 
@@ -1029,7 +1029,10 @@ button:hover {
   max-width:470px;
 
   margin-top:15px;
-}
+
+  position:relative;
+
+  z-index:20;
 
   padding:16px 24px;
 
