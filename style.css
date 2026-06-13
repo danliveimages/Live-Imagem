@@ -930,11 +930,14 @@ button:hover {
 
 #status {
 
-  margin-top: 0px;
+  margin-top: -2px;
 
   text-align: center;
 
   font-weight: bold;
+
+  font-size: 13px;
+
 }
 
 /* =========================
