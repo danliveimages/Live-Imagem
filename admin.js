@@ -8,6 +8,7 @@ import {
   onSnapshot,
   updateDoc,
   deleteDoc,
+  getDocs,
   doc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -1226,6 +1227,85 @@ buildDateFilterMenu(
 );
 
 });
+
+/* =========================
+   LIMPAR HISTÓRICO
+========================= */
+
+clearHistoryBtn.addEventListener(
+  "click",
+  async () => {
+
+    if(
+      !confirm(
+        "Deseja apagar todo o histórico?"
+      )
+    ){
+      return;
+    }
+
+    try{
+
+      const snapshot =
+        await getDocs(
+
+          collection(
+            db,
+            "submissions"
+          )
+
+        );
+
+      const promises = [];
+
+      snapshot.forEach((docSnap) => {
+
+        const data =
+          docSnap.data();
+
+        if(
+          data.approved ||
+          data.rejected
+        ){
+
+          promises.push(
+
+            deleteDoc(
+              doc(
+                db,
+                "submissions",
+                docSnap.id
+              )
+            )
+
+          );
+
+        }
+
+      });
+
+      await Promise.all(
+        promises
+      );
+
+      alert(
+        "Histórico apagado!"
+      );
+
+    }
+
+    catch(err){
+
+      console.error(err);
+
+      alert(
+        "Erro ao limpar histórico"
+      );
+
+    }
+
+  }
+);
 
 
 /* =========================
