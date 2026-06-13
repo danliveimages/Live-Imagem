@@ -398,7 +398,7 @@ margin-top:70px;
   flex-direction: column;
   align-items: center;
 
-  height: 780px;
+  height: 782px;
 
   overflow: visible;
 
@@ -720,23 +720,29 @@ input[type="file"] {
 
 .uploadLabel {
 
-  display: block;
+  display:flex;
 
-  width: 100%;
+  align-items:center;
 
-  padding: 18px;
+  justify-content:center;
 
-  border-radius: 20px;
+  width:100%;
 
-  border: 2px dashed #ccc;
+  height:60px;
 
-  text-align: center;
+  border-radius:20px;
 
-  cursor: pointer;
+  border:2px dashed #ccc;
 
-  margin-bottom: 22px;
+  text-align:center;
 
-  transition: .25s ease;
+  cursor:pointer;
+
+  margin-bottom:18px;
+
+  transition:.25s ease;
+
+  font-size:1rem;
 }
 
 .uploadLabel:hover {
