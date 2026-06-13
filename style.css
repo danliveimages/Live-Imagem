@@ -1071,3 +1071,38 @@ button:hover {
 
   color:#6b7280;
 }
+
+.uploadLabel{
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.uploadSuccess{
+
+  display:block;
+
+  font-size:1rem;
+
+  font-weight:600;
+
+  line-height:1;
+}
+
+.uploadFileName{
+
+  display:block;
+
+  margin-top:6px;
+
+  font-size:.72rem;
+
+  color:#777;
+
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
+}

@@ -50,8 +50,17 @@ imageInput.addEventListener(
       imageInput.files.length > 0
     ){
 
-      uploadLabel.textContent =
-        imageInput.files[0].name;
+      uploadLabel.innerHTML = `
+
+        <span class="uploadSuccess">
+          Foto Selecionada ✓
+        </span>
+
+        <span class="uploadFileName">
+          ${imageInput.files[0].name}
+        </span>
+
+      `;
 
     }
 
