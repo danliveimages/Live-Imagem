@@ -14,7 +14,8 @@ import {
 
 import {
   getAuth,
-  onAuthStateChanged
+  onAuthStateChanged,
+  signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 /* =========================
@@ -1483,11 +1484,26 @@ window.deleteSubmission = async function(id){
 
 logoutBtn.addEventListener(
   "click",
-  () => {
+  async () => {
 
-    alert(
-      "Login Firebase ainda não implementado"
-    );
+    try{
+
+      await signOut(auth);
+
+      window.location.href =
+        "login.html";
+
+    }
+
+    catch(error){
+
+      console.error(error);
+
+      alert(
+        "Erro ao sair"
+      );
+
+    }
 
   }
 );
