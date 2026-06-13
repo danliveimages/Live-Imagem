@@ -111,6 +111,10 @@ continueBtn.addEventListener("click", () => {
 
     page2.classList.add("activePage");
 
+document.querySelector(
+  ".container"
+).style.height = "810px";
+
   }, 10);
 
   /* PROGRESSO */
