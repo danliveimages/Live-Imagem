@@ -34,6 +34,37 @@ const progressLine =
 const status =
   document.getElementById("status");
 
+const imageInput =
+  document.getElementById("image");
+
+const uploadLabel =
+  document.querySelector(
+    ".uploadLabel"
+  );
+
+imageInput.addEventListener(
+  "change",
+  () => {
+
+    if(
+      imageInput.files.length > 0
+    ){
+
+      uploadLabel.textContent =
+        imageInput.files[0].name;
+
+    }
+
+    else{
+
+      uploadLabel.textContent =
+        "Escolher Foto 📷";
+
+    }
+
+  }
+);
+
 /* =========================
    CONTINUAR
 ========================= */
