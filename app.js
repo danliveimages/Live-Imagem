@@ -118,7 +118,7 @@ setTimeout(() => {
 
   if(window.innerWidth <= 700){
 
-    container.style.height = "750px";
+    container.style.height = "740px";
 
   }
 
