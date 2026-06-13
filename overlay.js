@@ -97,6 +97,19 @@ onSnapshot(q, async (snapshot)=>{
 
     message.innerText = data.message;
 
+if(!data.message?.trim()){
+
+  textWrapper.classList.add(
+    "nicknameOnly"
+  );
+
+}else{
+
+  textWrapper.classList.remove(
+    "nicknameOnly"
+  );
+}
+
     const newTimer =
       oldTimer.cloneNode(true);
 
