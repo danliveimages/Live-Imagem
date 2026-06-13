@@ -385,7 +385,7 @@ body {
 
   border-radius: 35px;
 
-  padding: 35px;
+  padding: 90px 35px 35px 35px;
 
 margin-top:70px;
 
@@ -1014,4 +1014,47 @@ button:hover {
   height:100%;
 
   object-fit:cover;
+}
+
+/* =========================
+   CRÉDITOS
+========================= */
+
+.creditsCard{
+
+  width:100%;
+  max-width:470px;
+
+  margin:15px auto 0;
+
+  padding:16px 24px;
+
+  background:white;
+
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+}
+
+.creditsTitle{
+
+  font-family:'Poppins',sans-serif;
+
+  font-weight:700;
+
+  color:#111827;
+}
+
+.creditsAuthor{
+
+  color:#6b7280;
 }
