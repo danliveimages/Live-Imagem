@@ -63,6 +63,9 @@ const selectedDate =
 const dateFilterScroll =
   document.getElementById("dateFilterScroll");
 
+const logoutBtn =
+  document.getElementById("logoutBtn");
+
 let currentDateFilter = "all";
 
 function buildDateFilterMenu(
@@ -1455,3 +1458,14 @@ window.deleteSubmission = async function(id){
   }
 
 };
+
+logoutBtn.addEventListener(
+  "click",
+  () => {
+
+    alert(
+      "Login Firebase ainda não implementado"
+    );
+
+  }
+);

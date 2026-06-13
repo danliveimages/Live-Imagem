@@ -882,6 +882,79 @@ box-shadow:
 }
 
 /* =========================
+   SAIR
+========================= */
+
+#logoutBtn{
+
+  height:62px;
+
+  padding:0 24px;
+
+  border-radius:22px;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  font-family:'Poppins',sans-serif;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,19,35,.98),
+      rgba(9,14,28,.98)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.06);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.30);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  transition:.25s ease;
+
+  margin-top:auto;
+
+  width:280px;
+}
+
+#logoutBtn:hover{
+
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+  filter:
+    brightness(1.08);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239,68,68,.30),
+      rgba(239,68,68,.08)
+    );
+
+  border:
+    2px solid #ef4444;
+
+  box-shadow:
+    0 0 45px rgba(239,68,68,.45),
+    inset 0 0 18px rgba(239,68,68,.15),
+    0 0 70px rgba(239,68,68,.25);
+}
+
+/* =========================
    MENU FILTRO DATA
 ========================= */
 
