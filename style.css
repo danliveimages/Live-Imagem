@@ -387,7 +387,7 @@ body {
 
   border-radius: 35px;
 
-  padding: 90px 35px 35px 35px;
+  padding: 75px 35px 25px 35px;
 
 margin-top:70px;
 
@@ -398,7 +398,7 @@ margin-top:70px;
   flex-direction: column;
   align-items: center;
 
-  height: 800px;
+  height: 760px;
 
   overflow: visible;
 
