@@ -12,15 +12,17 @@ body {
 
   min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display:flex;
 
-  overflow-x: hidden;
+  flex-direction:column;
 
-  position: relative;
+  align-items:center;
 
-  padding: 20px;
+  overflow-x:hidden;
+
+  position:relative;
+
+  padding:20px;
 }
 
 /* =========================
@@ -396,7 +398,7 @@ margin-top:70px;
   flex-direction: column;
   align-items: center;
 
-  min-height: 800px;
+  min-height: auto;
 
   overflow: visible;
 
@@ -612,7 +614,7 @@ margin-top:70px;
 
   position: absolute;
 
-  top: 150px;
+  top: 200px;
 
   left: 35px;
 
@@ -1023,9 +1025,11 @@ button:hover {
 .creditsCard{
 
   width:100%;
+
   max-width:470px;
 
-  margin:15px auto 0;
+  margin-top:15px;
+}
 
   padding:16px 24px;
 
