@@ -1084,7 +1084,7 @@ button:hover {
 
   .profileAvatar{
 
-    top:-48px;
+    top:-46px;
 
     width:90px;
 
@@ -1135,14 +1135,5 @@ button:hover {
 
     margin-top:8px;
   }
-
-.paymentAlert{
-
-  padding:14px;
-
-  font-size:16px;
-
-  line-height:1.25;
-}
 
 }
